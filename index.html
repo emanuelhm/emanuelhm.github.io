@@ -257,13 +257,6 @@
         </div>
     </footer>
 
-    @Html.Partial("_RegisterPartial")
-
-    @if (TempData["Alerta"] != null && TempData["Classe"] != null)
-    {
-        @Html.Partial("_BalloonPartial", new Tuple<string, string>(TempData["Alerta"].ToString(), TempData["Classe"].ToString()))
-    }
-
     <!-- Javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
