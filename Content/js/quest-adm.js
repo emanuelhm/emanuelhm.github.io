@@ -398,7 +398,7 @@ $(document).ready(function () {
             data: JSON.stringify(quest),
             success: function (result) {
                 if (result == "true")
-                    window.location.href = "/Home/Inicio";
+                    window.location.href = "/index.html";
                 else
                     showBalloon(result, "yellow-alert");
             },

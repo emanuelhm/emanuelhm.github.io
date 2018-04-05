@@ -314,7 +314,7 @@ $(document).ready(function () {
             }),
             success: function (response) {
                 if (response == "true")
-                    window.location.href = "/Home/Inicio";
+                    window.location.href = "/index.html";
                 else
                     showBalloon("Algo deu errado", "yellow-alert");
             },
