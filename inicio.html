@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <header style="background-color: rgb(16, 100, 148);">
+    <header style="background-color: rgb(16, 100, 148);" class="mudarCor">
         <div>
             <p class="txtlogo logo-hidden icon-white">
                 <a href="/Home/Inicio" title="Início">
@@ -48,7 +48,7 @@
     <section class="pads-bot">
 
         <div class="flex-properties-r">
-            <div class="title-a" style="color: rgb(16, 100, 148);"><h2>GRUPOS</h2></div>
+            <div class="title-a mudarCor" style="color: rgb(16, 100, 148);"><h2>GRUPOS</h2></div>
             <div class="title-b">
                 <div class="flex-properties-r pads icon-black">
                     <a href="" data-target="#modalCriarGrupo" data-toggle="modal"><i class="fa fa-plus elipse" aria-hidden="true"></i></a>
@@ -69,7 +69,7 @@
     <section class="pads-bot">
 
         <div class="flex-properties-r margintop">
-            <div class="title-a" style="color: rgb(16, 100, 148);"><h2>TASKS</h2></div>
+            <div class="title-a mudarCor" style="color: rgb(16, 100, 148);"><h2>TASKS</h2></div>
             <div class="title-b">
                 <div class="flex-properties-r pads icon-black">
                     <a href="/Quest/CriarQuest"><i class="fa fa-plus elipse" aria-hidden="true"></i></a>
@@ -90,7 +90,7 @@
     <section class="pads-bot">
 
         <div class="flex-properties-r margintop">
-            <div class="title-a" style="color: rgb(16, 100, 148);"><h2>FEEDBACKS</h2></div>
+            <div class="title-a mudarCor" style="color: rgb(16, 100, 148);"><h2>FEEDBACKS</h2></div>
             <div class="title-b">
                 <div class="flex-properties-r pads icon-black">
                     <a href="/Home/Feedbacks"><i class="fa fa-caret-down elipse" aria-hidden="true"></i></a>
@@ -108,7 +108,6 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <form id="formCriarGrupo" action="/Grupo/CriarGrupo" method="post">
-                    @Html.AntiForgeryToken()
                     <div class="modal-header">
                         <h1 class="modal-title" id="exampleModalLabel">Criar Novo Grupo</h1>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -130,7 +129,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <input type="submit" class="btn btn-secondary btn-cg" value="Criar">
+                        <button type="button" class="btn btn-secondary btn-cg" onclick="simularCriacaoGrupo()">Criar</button>
                     </div>
                 </form>
             </div>
@@ -148,5 +147,11 @@
     <script src="/Content/js/inicio.js"></script>
     <script src="/Content/js/showBalloon.js"></script>
     <script src="/Content/js/mudar-status.js"></script>
+
+    <script>
+        $(".mudarCor").each(function (index, value) {
+            $(value).css("background-color", cor);
+        });
+    </script>
 </body>
 </html>
