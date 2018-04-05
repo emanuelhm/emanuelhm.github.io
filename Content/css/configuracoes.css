@@ -1,0 +1,119 @@
+.form-controll{
+	width: 100%;
+}
+
+.fa-remove{
+     margin-left: 40%;
+}
+
+.flex-properties-r{
+	align-items: unset;
+}
+
+
+.subtitulo{
+	-webkit-box-align: initial;
+	    -ms-flex-align: initial;
+	            -ms-grid-row-align: initial;
+	        align-items: initial;
+}
+
+.flex-properties-r div:not(.title-a):not(.title-b){
+	margin-left: 1%;
+}
+
+.title-a, .title-b{
+	width: 50%;
+}
+
+.title-b .flex-properties-r{
+	width: auto !important;
+}
+
+.pads{
+	height: 75px;
+}
+
+.title{
+	margin-bottom: 3%;
+	text-align: center;
+	color: rgba(0,0,0,0.6);
+	-webkit-box-align: baseline;
+	    -ms-flex-align: baseline;
+	            -ms-grid-row-align: baseline;
+	        align-items: baseline;
+}
+
+.title h1{
+	margin-right: 2%;
+}
+
+.title a{
+	color: black;
+}
+
+.title a:hover{
+	color: #106494;
+}
+
+#chartContainer{
+	width: 100%;
+	margin-top: 1%;
+}
+
+.quebra{
+	background-color: rgba(0,0,0,.1);
+	border: 0;
+	height: 1px;
+}
+
+.btn-container{
+	text-align: right;
+}
+
+#cartao-input-container{
+	width: 80%;
+}
+
+#cartao-input-container div{
+	width: 47%;
+}
+
+.icon-container{
+    flex-wrap: nowrap;
+    align-items: initial;
+}
+
+.largura{
+    width: 28%;
+}
+
+
+@media (max-width: 600px){
+	
+	.title-a, .title-b{
+		width: 100%;
+	}
+
+	.title-b{
+		display: none;
+	}
+
+	.title h1{
+		margin: auto;
+	}
+	
+	.title li{
+		margin: auto;
+	}
+	
+	.btn-container{
+		text-align: center;
+		margin-top: 5%;
+	}
+
+	input[type="text"]{
+		margin-bottom: 5%;
+	}
+
+}

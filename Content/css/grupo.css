@@ -1,0 +1,113 @@
+#chartContainer{
+	width: 100%;
+	margin-top: 1%;
+}
+
+.flex-properties-g{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.flex-properties-g i{
+	font-size: 30px;
+}
+
+.bull{
+	color: #106494;
+	font-size: 25px;
+}
+
+.questlist-g{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.bull{
+	margin-right: 1%;
+}
+
+.user-container{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: horizontal;
+	-webkit-box-direction: normal;
+	    -ms-flex-direction: row;
+	        flex-direction: row;
+	-webkit-box-pack: start;
+	    -ms-flex-pack: start;
+	        justify-content: flex-start;
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.user-container a{
+	font-size: 25px;
+	margin-left: 2%;
+    cursor: pointer;
+}
+
+.modalfooter-container{
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
+
+.modalfooter-container input{
+	width: 30%;
+}
+
+.user-title{
+	font-size: 18px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: block;
+	width: 25%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.grupo-descricao{
+    width: 300px;
+}
+
+.limit-lines_grupo{
+    margin: 0;
+    width: 300px;
+    word-wrap: break-word;
+}
+
+.integrante{
+    cursor: pointer;
+}
+
+@media (max-width: 600px){
+	.flex-properties-g{
+		flex-direction: column;
+	}
+	#ExcluirIntegrante{
+		margin-bottom: 5%;
+	}
+	.user-title{
+		width: 80%;
+	}
+    .limit-lines_grupo{
+        text-align: center;
+    }
+}

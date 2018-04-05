@@ -1,0 +1,791 @@
+.Fa {
+    cursor: pointer;
+}
+
+::selection {
+    background: #106494;
+    /* Safari */
+    color: #FFFFFF;
+}
+
+::-moz-selection {
+    background: #106494;
+    /* Firefox */
+    color: #FFFFFF;
+}
+
+/* Layout CSS */
+
+.elements{
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+}
+
+.icon-container{
+    width: 20%;
+    justify-content: initial !important;
+}
+
+input:focus {
+    border-color: #106494 !important;
+}
+
+textarea:focus {
+    border-color: #106494 !important;
+}
+
+header {
+    height: 130px;
+    background-color: #106494;
+    display: flex;
+    /*display: -webkit-box;*/
+    display: -ms-flexbox;
+    -ms-flex-pack: distribute;
+    /*-webkit-box-align: center;*/
+    -ms-flex-align: center;
+    align-items: center;
+    color: white;
+    justify-content: space-around;
+}
+
+.dropdown-menu, dropdown-notificacao {
+    left: initial;
+    right: 0;
+}
+
+.notify-item{
+    padding: 0;
+}
+
+.notify{
+    min-width: 215px !important;
+    max-height: 300px !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    border-radius: 18px;
+}
+
+.notify-elipse{
+    width: 20px;
+    height: 20px;
+    border-radius: 30px;
+    margin-right: 4%;
+}
+
+.notify-text{
+    word-wrap: break-word;
+    width: 265px;
+}
+
+.principal{
+    width: 300px;
+    align-items: center;
+    display: flex;
+}
+
+.notify a{
+    display: flex !important;
+    align-items: center !important;
+    white-space: normal;
+    padding-left: 1%;
+}
+
+.notify span{
+    color: #000;
+    width: 280px;
+    white-space: normal;
+}
+
+.negrito{
+    font-weight: bolder;
+}
+
+.li-hidden {
+    list-style: none;
+    font-size: 30px;
+}
+
+.txtlogo {
+    font-size: 100px;
+}
+
+#txt-task {
+    font-family: Calibri;
+}
+
+#txt-quest {
+    font-family: Impact;
+}
+
+
+
+/* Others CSS */
+
+body {
+    font-family: Calibri;
+}
+
+.flex-properties-r {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.flex-properties-c {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    text-align: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.group-container {
+    width: 20%;
+}
+
+.form-group .form-control {
+    width: 400px;
+    margin: 0 auto;
+}
+
+.select-container .form-control {
+    width: 100%;
+}
+
+.h1, h1 {
+    font-size: 34px;
+}
+
+.justify {
+    text-align: justify;
+}
+
+textarea {
+    resize: none;
+}
+
+.form-group {
+    margin-bottom: 0;
+}
+
+.title-a {
+    width: 30%;
+    background-color: white;
+    border-bottom: 1.8px solid rgba(0,0,0,0.1);
+    border-top: 1.8px solid rgba(0,0,0,0.1);
+    color: #106494;
+}
+
+    .title-a h2 {
+        font-weight: bolder;
+        text-align: center;
+        font-size: 40px;
+    }
+
+.title-b {
+    width: 70%;
+    background-color: rgba(0,0,0,0.1);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.icon-white a {
+    color: white;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.icon-white a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.icon-black a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.icon-black a:hover {
+    color: #106494;
+    text-decoration: none;
+}
+
+.icon-black span {
+    color: black;
+    text-decoration: none;
+}
+
+    .icon-black span:hover {
+        color: #106494;
+        text-decoration: none;
+    }
+
+.quest-body a {
+    width: 100%;
+}
+
+.limit-lines {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.limit-lines h4, .limit-lines h3, .limit-lines a, .limit-lines span, .limit-lines p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+span .limit-lines{
+    font-weight: bold;
+}
+
+.limit-lines_grupo {
+    margin: 0;
+    width: 250px;
+}
+
+.limit-lines_grupo_icon {
+    width: initial;
+}
+
+    .limit-lines_grupo_icon a {
+        display: block;
+        width: 140px;
+    }
+
+.elipse {
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
+    font-size: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+
+.error {
+    color: #ce2e2e;
+}
+
+label {
+    margin: 0;
+}
+
+    label span {
+        white-space: nowrap;
+    }
+
+.grupo-elipse {
+    width: 140px;
+    height: 140px;
+    border-radius: 80px;
+    background-image: url("../img/groupicon.png");
+    cursor: pointer;
+}
+
+    .grupo-elipse img {
+        width: 130px;
+        opacity: 0.5;
+    }
+
+.grupo-nome {
+    color: black;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.quest-body {
+    position: relative;
+    height: 200px;
+    background-color: #DCDCDC;
+    width: 180px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 0px 2px 8px 1px #888888;
+}
+
+    .quest-body h1 {
+        font-weight: bolder;
+        font-size: 45px;
+        margin-top: 5px;
+    }
+
+    .quest-body div:first-child h4 {
+        font-weight: bolder;
+    }
+
+.filete {
+    height: 20px;
+    width: 180px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    box-shadow: 0px 0px 8px 1px #888888;
+}
+
+.margintop {
+    margin-top: 2%;
+}
+
+.pads {
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    margin-left: 5%;
+    width: 100%;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+}
+
+    .pads h3 {
+        margin-left: 10px;
+        text-align: center;
+    }
+
+
+    .pads a {
+        color: black;
+    }
+
+.pads-bot {
+    margin-bottom: 3%;
+}
+
+.select-container {
+    position: absolute;
+    bottom: 20px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+.modal-content {
+    text-align: center;
+}
+
+.modal-title {
+    text-align: center;
+    color: rgba(0,0,0,0.6);
+}
+
+#modalDownload .modal-body {
+    overflow-y: auto;
+    max-height: 450px;
+}
+
+.modal-body{
+    padding: 15px 0;
+}
+
+.modal-body .select-container {
+    position: static;
+    width: fit-content;
+}
+
+.modal-body input:not([type='date']) {
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+
+.modal-body p {
+    color: black;
+    font-size: 18px;
+}
+
+.modal-body textarea {
+    margin: 0 auto;
+}
+
+.modal-footer {
+    text-align: center;
+}
+
+.fa-file {
+    font-size: 50px;
+    width: 80px;
+    height: 80px;
+}
+
+.btn-cg {
+    height: 50px;
+    font-size: 22px;
+    font-weight: bolder;
+}
+
+    .btn-cg:hover {
+        background-color: #106494;
+        color: white;
+    }
+
+.item {
+    margin-bottom: 2%;
+    margin-right: 2%;
+}
+
+.form-container input {
+    width: 450px;
+    height: 35px;
+    margin-top: 15%;
+}
+
+.form-container textarea {
+    width: 450px;
+    height: 70px;
+}
+
+.styled-p {
+    color: #929496;
+    font-size: 18px;
+    margin-top: 15%;
+}
+
+.color-container {
+    text-align: center;
+    font-size: 18px;
+    color: #929496;
+}
+
+.modal-body input[type='date'] {
+    width: 160px;
+}
+
+.background-page {
+    background-color: white;
+}
+
+.logo-task {
+    text-align: center;
+    background-color: #106494;
+    width: 100%;
+    height: 100%;
+}
+
+.messages-1 {
+    font-size: 30px;
+    color: white;
+    font-family: Impact;
+    margin-top: 10%;
+    color: #231f20;
+}
+
+.messages-forgot {
+    margin-top: 0%;
+}
+
+.messages-2 {
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 2%;
+    color: #929496;
+}
+
+.messages-error {
+    font-size: 50px;
+}
+
+.login {
+    margin-top: 5%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 5%;
+    justify-content: center;
+}
+
+.input-login {
+    width: 300px;
+    margin-bottom: 2%;
+}
+
+.btn-login {
+    width: 250px !important;
+}
+
+#forget {
+    margin-top: 8%;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.link {
+    text-decoration: none;
+    color: #106494;
+}
+
+    .link:hover {
+        color: #4682B4;
+        text-decoration: none;
+    }
+
+.task-quest {
+    font-size: 75px;
+}
+
+.questlist {
+    width: 100%;
+    min-height: 70px;
+    height: auto;
+    background-color: rgba(0,0,0,0.02);
+    height: auto;
+    border: solid;
+    border-color: rgba(0,0,0,0.1);
+    border-width: 0.01em;
+    display: flex;
+}
+
+.questlist-none {
+    height: 70px;
+    font-size: 20px;
+    color: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.questlist-block {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    width: 170px;
+    flex-wrap: nowrap;
+    margin-right: 1%;
+}
+
+    .questlist-block:hover {
+        background-color: rgba(0,0,0,0.05);
+        border-radius: 0.4em;
+    }
+
+    .questlist-block:focus {
+        background-color: rgba(0,0,0,0.05);
+        border-radius: 0.4em;
+    }
+
+    .questlist-block:active {
+        background-color: rgba(0,0,0,0.05);
+        border-radius: 0.4em;
+    }
+
+.questblock {
+    display: flex;
+    align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.quest-cor {
+    width: 40px;
+    height: 40px;
+    border-radius: 90px;
+}
+
+.quest-info {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 130px;
+}
+
+.fa-file-text {
+    color: black;
+    font-size: 25px;
+    margin-top: 3%;
+}
+
+#modalDownload .modal-sm {
+    width: 500px;
+}
+
+.download-item {
+    background-color: #f9f9f9;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    margin-bottom: 2%;
+}
+
+.download-info {
+    margin: 0 16px;
+    width: 25%;
+}
+
+.download-info p{
+    margin-left: 10%;
+}
+
+.task-namegroup{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.task-group-elipse{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    margin-right: 5%;
+}
+    /* 1000 - 1332 */
+
+@media (min-width: 1332px){
+    .pads h3{
+        font-size: 21px;
+    }
+}
+
+@media (min-width: 1000px ) and (max-width: 1332px){
+    .pads h3 {
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 600px) {
+
+    label span {
+        white-space: normal;
+    }
+
+    .form-group .form-control {
+        width: 100%;
+    }
+
+    .margin-bottom {
+        margin-bottom: 12%;
+    }
+
+    .title-a {
+        width: 100%;
+    }
+
+    .title-b {
+        width: 100%;
+        -ms-flex-pack: distribute;
+        justify-content: space-around;
+        margin-bottom: 4%;
+    }
+
+    .flex-properties-r {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -ms-grid-row-align: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .group-container {
+        width: initial;
+    }
+
+    .pads {
+        margin-left: 0;
+    }
+
+        .pads h3 {
+            margin-left: 0px;
+        }
+
+    .txtlogo {
+        font-size: 42px;
+    }
+
+    .form-container input {
+        width: 350px;
+    }
+
+    .form-container textarea {
+        width: 350px;
+    }
+
+    .mobile-hidden {
+        display: none;
+    }
+
+    #modalDownload .modal-sm {
+        width: auto;
+    }
+
+    .download-item {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .download-info {
+        margin: 0;
+    }
+}
+
+@media (max-width: 330px) {
+    .form-container input {
+        width: 300px;
+    }
+
+    .download-item {
+        flex-direction: row;
+        width: auto;
+    }
+
+    #modalDownload .modal-sm {
+        width: auto;
+    }
+
+    .form-container textarea {
+        width: 300px;
+    }
+
+    .item {
+        width: initial;
+    }
+
+    .mobile-hidden {
+        display: none;
+    }
+
+    .pads h3 {
+        margin-left: 0px;
+    }
+
+    .download-info {
+        margin: 0;
+    }
+}

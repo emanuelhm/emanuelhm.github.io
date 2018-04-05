@@ -1,0 +1,84 @@
+﻿.lista-usuarios-chat {
+    background-color: white;
+    height: 400px !important;
+    max-height: 400px !important;
+    overflow-y: scroll;
+    padding: 15px 15px 15px 15px;
+}
+
+    .lista-usuarios-chat::-webkit-scrollbar {
+        width: 5px;
+        max-height: 50px;
+    }
+
+    .lista-usuarios-chat::-webkit-scrollbar-track {
+        background: #ddd;
+    }
+
+    .lista-usuarios-chat::-webkit-scrollbar-thumb {
+        background: #1d1d1d;
+        max-height: 50px;
+    }
+
+.chat-home {
+    background-color: #fff;
+    height: 400px;
+    max-height: 400px;
+}
+
+.campo-texto {
+    padding: 15px;
+    color: black;
+    height: 350px;
+    max-height: 350px;
+    overflow-y: scroll;
+}
+
+    .campo-texto::-webkit-scrollbar {
+        width: 5px;
+        max-height: 50px;
+    }
+
+    .campo-texto::-webkit-scrollbar-track {
+        background: #ddd;
+    }
+
+    .campo-texto::-webkit-scrollbar-thumb {
+        background: #1d1d1d;
+        max-height: 50px;
+    }
+
+.background-chat {
+    /*top right bottom left*/
+    padding: 15px 25px 15px 25px;
+    background-color: rgb(0, 58, 100);
+    color: azure;
+    box-shadow: #808080 3px 3px 2px;
+}
+
+.chat-stuff {
+    padding: 10px 25px 10px 0px;
+}
+
+.position-absolute {
+    position: absolute;
+    bottom: 0;
+}
+
+h1.text-center {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.tab-content {
+    padding-top: 0px;
+}
+
+.flex-stretch {
+    display: flex;
+    align-items: stretch;
+}
+
+.search {
+    margin-bottom: 25px;
+}

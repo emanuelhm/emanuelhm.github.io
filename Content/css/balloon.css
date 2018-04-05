@@ -1,0 +1,28 @@
+﻿.balloon {
+    text-align: center;
+    bottom: 2%;
+    left: 50%;
+    transform: translate(-50%);
+    font-size: 3rem;
+    min-width: 0.7rem;
+    border: 1px solid rgba(212, 212, 212, 0.4);
+    border-radius: 3px;
+    box-shadow: rgb(85, 85, 85) 2px 2px 4px;
+    color: rgb(238, 238, 238);
+    background-color: rgb(17, 17, 17);
+    z-index: 32767;
+    text-align: left;
+    position: fixed;
+    display: block;
+    visibility: visible;
+    padding: 0.2rem 0.5rem;
+    opacity: 0.85;
+}
+
+.green-alert {
+    color: #32CD32;
+}
+
+.yellow-alert {
+    color: #EEEE00;
+}
