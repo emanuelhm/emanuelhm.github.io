@@ -129,7 +129,7 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary btn-cg" onclick="simularCriacaoGrupo()">Criar</button>
+                        <button class="btn btn-secondary btn-cg">Criar</button>
                     </div>
                 </form>
             </div>
@@ -147,14 +147,5 @@
     <script src="/Content/js/inicio.js"></script>
     <script src="/Content/js/showBalloon.js"></script>
     <script src="/Content/js/mudar-status.js"></script>
-
-    <script>
-        $(".mudarCor").each(function (index, value) {
-            $(value).css("background-color", "#" + sessionStorage.getItem("cor"));
-        });
-        $(".mudarCorFonte").each(function (index, value) {
-            $(value).css("color", "#" + sessionStorage.getItem("cor"));
-        });
-    </script>
 </body>
 </html>

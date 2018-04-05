@@ -256,10 +256,9 @@
         </div>
     </footer>
 
-    <form action="/Account/Register" method="post" id="RegisterForm">
+    <form method="post" id="RegisterForm">
         <div id="modalCadastro" class="modal fade" role="dialog">
             <div class="modal-dialog">
-                @Html.AntiForgeryToken()
                 <!-- Modal content-->
                 <div class="modal-content">
                     <div class="modal-header">
@@ -310,7 +309,7 @@
                     </div>
                     <div class="modal-footer">
                         <div class="col-md-12">
-                            <button type="button" class="btn btn-primary btn-lg btn-blue" onclick="simularCriacaoUsuario()">Cadastrar</button>
+                            <button class="btn btn-primary btn-lg btn-blue">Cadastrar</button>
                         </div>
                     </div>
 
