@@ -48,7 +48,7 @@
     <section class="pads-bot">
 
         <div class="flex-properties-r">
-            <div class="title-a mudarCor" style="color: rgb(16, 100, 148);"><h2>GRUPOS</h2></div>
+            <div class="title-a mudarCorFonte" style="color: rgb(16, 100, 148);"><h2>GRUPOS</h2></div>
             <div class="title-b">
                 <div class="flex-properties-r pads icon-black">
                     <a href="" data-target="#modalCriarGrupo" data-toggle="modal"><i class="fa fa-plus elipse" aria-hidden="true"></i></a>
@@ -69,7 +69,7 @@
     <section class="pads-bot">
 
         <div class="flex-properties-r margintop">
-            <div class="title-a mudarCor" style="color: rgb(16, 100, 148);"><h2>TASKS</h2></div>
+            <div class="title-a mudarCorFonte" style="color: rgb(16, 100, 148);"><h2>TASKS</h2></div>
             <div class="title-b">
                 <div class="flex-properties-r pads icon-black">
                     <a href="/Quest/CriarQuest"><i class="fa fa-plus elipse" aria-hidden="true"></i></a>
@@ -90,7 +90,7 @@
     <section class="pads-bot">
 
         <div class="flex-properties-r margintop">
-            <div class="title-a mudarCor" style="color: rgb(16, 100, 148);"><h2>FEEDBACKS</h2></div>
+            <div class="title-a mudarCorFonte" style="color: rgb(16, 100, 148);"><h2>FEEDBACKS</h2></div>
             <div class="title-b">
                 <div class="flex-properties-r pads icon-black">
                     <a href="/Home/Feedbacks"><i class="fa fa-caret-down elipse" aria-hidden="true"></i></a>
@@ -150,7 +150,10 @@
 
     <script>
         $(".mudarCor").each(function (index, value) {
-            $(value).css("background-color", sessionStorage.getItem("cor"));
+            $(value).css("background-color", "#" + sessionStorage.getItem("cor"));
+        });
+        $(".mudarCorFonte").each(function (index, value) {
+            $(value).css("color", "#" + sessionStorage.getItem("cor"));
         });
     </script>
 </body>
