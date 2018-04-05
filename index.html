@@ -256,6 +256,69 @@
         </div>
     </footer>
 
+    <form action="/Account/Register" method="post" id="RegisterForm">
+        <div id="modalCadastro" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                @Html.AntiForgeryToken()
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <div class="logomod"></div>
+                        <h4 class="modal-title">Cadastro</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>Preencha os campos abaixo para realizar seu cadastro.</p>
+                        <div class="col-md-6 inp">
+                            <input id="Nome" name="Nome" type="text" class="form-control" placeholder="Nome" />
+                            <label for="Nome"></label>
+                        </div>
+                        <div class="col-md-6 inp">
+                            <input type="text" id="Sobrenome" name="Sobrenome" class="form-control" placeholder="Sobrenome" />
+                            <label for="Sobrenome"></label>
+                        </div>
+                        <div class="col-md-6 inp">
+                            <input id="Email" name="Email" type="text" class="form-control" placeholder="Email" />
+                            <label for="Email"></label>
+                        </div>
+                        <div class="col-md-6 inp">
+                            <input id="ConfirmarEmail" name="ConfirmarEmail" type="text" class="form-control" placeholder="Confirmar Email" />
+                            <label for="ConfirmarEmail"></label>
+                        </div>
+                        <div class="col-md-6 inp">
+                            <input id="Senha" name="Senha" type="password" class="form-control" placeholder="Senha" />
+                            <label for="Senha"></label>
+                        </div>
+                        <div class="col-md-6 inp">
+                            <input type="password" id="ConfirmarSenha" name="ConfirmarSenha" class="form-control" placeholder="Confirme sua senha" />
+                            <label for="ConfirmarSenha"></label>
+                        </div>
+                        <div class="col-md-6">
+                            <select id="Sexo" name="Sexo" class="form-control">
+                                <option value="M">Masculino</option>
+                                <option value="F">Feminino</option>
+                            </select>
+                            <label for="Sexo"></label>
+                        </div>
+                        <div class="col-md-6 inp">
+                            <input id="DataNascimento" name="DataNascimento" type="date" class="form-control" />
+                        </div>
+                        <div class="col-md-12">
+                            <p>Escolha a cor do seu tema.</p>
+                            <input type="hidden" name="Cor" id="Cor" value="#106494">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-primary btn-lg btn-blue" value="Cadastrar" />
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
     <!-- Javascript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
