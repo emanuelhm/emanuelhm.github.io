@@ -1,28 +1,282 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Hank Quinlan, Horrible Cop</title>
-	</head>
-	<body>
-		<nav>
-    		<ul>
-        		<li><a href="/">Home</a></li>
-	        	<li><a href="/about">About</a></li>
-        		<li><a href="/cv">CV</a></li>
-        		<li><a href="/blog">Blog</a></li>
-    		</ul>
-		</nav>
-		<div class="container">
-    		<div class="blurb">
-        		<h1>Hi there, I'm Hank Quinlan!</h1>
-				<p>I'm best known as the horrible cop from <em>A Touch of Evil</em> Don't trust me. <a href="/about">Read more about my life...</a></p>
-    		</div><!-- /.blurb -->
-		</div><!-- /.container -->
-		<footer>
-    		<ul>
-        		<li><a href="mailto:hankquinlanhub@gmail.com">email</a></li>
-        		<li><a href="https://github.com/hankquinlan">github.com/hankquinlan</a></li>
-			</ul>
-		</footer>
-	</body>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Task Quest</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content="">
+    <meta property="og:description" content="">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="~/Content/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/Content/css/animate.css">
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100,200,300,500,600,700,800,900|Montserrat:400,700'
+          rel='stylesheet' type='text/css'>
+    <link href="~/Content/css/balloon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/css/bootstrap.min.css">
+    <link rel="stylesheet" href="~/Content/css/main.css">
+    <link rel='stylesheet' href='~/Content/css/spectrum.css' />
+    <link rel="stylesheet" href="~/Content/css/balloon.css" />
+</head>
+
+<body>
+
+    <header class="navbar navbar-inverse navbar-fixed-top open">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <p class="txtlogo logo-hidden icon-white">
+                    <a href="Inicio.html" style="color: white;">
+                        <span id="txt-task">Task</span><span id="txt-quest">Quest</span>
+                    </a>
+                </p>
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <form action="/Account/Login" method="post" class="Form" id="LoginForm">
+                    @Html.AntiForgeryToken()
+                    <ul class="nav navbar-nav navbar-right inputs">
+                        <li>
+                            <input type="text" class="form-control login" placeholder="Email" name="LoginEmail" id="LoginEmail">
+                            <label for="LoginEmail"></label>
+                        </li>
+                        <li>
+                            <input type="password" class="form-control login" placeholder="Senha" name="LoginSenha" id="LoginSenha">
+                            <label for="LoginSenha"></label>
+                        </li>
+                        <li>
+                            <input type="submit" class="btn btn-primary btn-lg btn-header darkblue-bg" value="Entrar" />
+                            <a href="/Account/ForgotPassword" id="forget">Esqueceu sua senha?</a>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </header>
+    <section id="banner-grupo-trabalho">
+        <div class="container">
+            <div class="row header-info">
+                <div class="col-sm-10 col-sm-offset-1 text-center">
+                    <h1 class="wow fadeIn cor">Comunique, organize e motive em grupo</h1>
+                    <br />
+                    <p class="lead wow fadeIn" data-wow-delay="0.5s">
+                        O software ideal para aumentar a produtividade de
+                        equipes
+                    </p>
+                    <div>
+                        <a href="#invite" class="btn btn-primary btn-lg btn-blue scroll text-left wow fadeInUp">Inscreva-se</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="mouse-icon hidden-xs">
+        <div class="scroll"></div>
+    </div>
+
+    <section id="banner-felicidade" class="pad-xl centralize-v">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text-center margin-30 wow fadeIn" data-wow-delay="0.6s">
+                    <h2>Organize suas atividades, comunique-se em grupo e seja feliz!</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="banner-grafico" class="pad-xl centralize-v">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text-center margin-30 wow fadeIn" data-wow-delay="0.6s">
+                    <h2>Classifique suas atividades em Quests e Tasks.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="main-info" class="pad-xl2">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-8 col-sm-offset-2 text-center margin-30 wow fadeIn" data-wow-delay="0.6s">
+                    <h2 class="title">Milhares de recursos para a realização de suas tarefas </h2>
+                </div>
+                <div class="col-sm-4 wow fadeIn recursos" data-wow-delay="0.4s">
+                    <i class="fa fa-commenting fa-settings"></i>
+                    <hr class="line purple">
+                    <h3>Mensagens</h3>
+                    <p>Comunique-se com todos de sua equipe</p>
+                </div>
+                <div class="col-sm-4 wow fadeIn recursos" data-wow-delay="0.8s">
+                    <i class="fa fa-line-chart fa-settings"></i>
+                    <hr class="line blue">
+                    <h3>Gráfico</h3>
+                    <p>Observe o progresso individual e coletivo dos processos</p>
+                </div>
+                <div class="col-sm-4 wow fadeIn recursos" data-wow-delay="1.2s">
+                    <i class="fa fa-users fa-settings"></i>
+                    <hr class="line yellow">
+                    <h3>Grupos</h3>
+                    <p>Crie ou participe de um grupo para realizar tarefas em equipe</p>
+                </div>
+
+                <div class="col-sm-4 wow fadeIn recursos" data-wow-delay="0.4s">
+                    <i class="fa fa-tasks fa-settings"></i>
+                    <hr class="line purple">
+                    <h3>Progresso</h3>
+                    <p>Visualize rapidamente o que foi feito para concluir uma tarefa</p>
+                </div>
+                <div class="col-sm-4 wow fadeIn recursos" data-wow-delay="0.8s">
+                    <i class="fa fa-level-up fa-settings"></i>
+                    <hr class="line blue">
+                    <h3>Experiência</h3>
+                    <p>A cada tarefa concretizada, ganhe experiência que reflete sua eficiência</p>
+                </div>
+                <div class="col-sm-4 wow fadeIn recursos" data-wow-delay="1.2s">
+                    <i class="fa fa-lock fa-settings"></i>
+                    <hr class="line yellow">
+                    <h3>Segurança</h3>
+                    <p>Todas as suas informações e tarefas armazenadas de forma segura</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!--Pricing-->
+    <section id="pricing">
+        <div class="container">
+            <div class="row margin-40">
+                <div class="col-sm-8 col-sm-offset-2 text-center">
+                    <h2 class="white">Planos</h2>
+                    <p class="white">Assine as versões Premium e ganhe diversos benefícios no serviço.</p>
+                </div>
+            </div>
+
+            <div class="row margin-50">
+
+                <div class="col-md-6 pricing-container wow fadeInUp" data-wow-delay="0.1s">
+                    <ul class="list-unstyled pricing-table text-center">
+                        <li class="headline"><h5 class="white">Plano Free</h5></li>
+                        <li class="price">
+                            <div class="amount">Grátis</div>
+                        </li>
+                        <li class="info">As funcionalidades básicas do sistema</li>
+                        <li class="features first">Tenha até 10 integrantes em um grupo</li>
+                        <li class="features">Um administrador por grupo</li>
+                        <li class="features">Apenas gráfico individual</li>
+                        <li class="features last btn btn-secondary btn-wide"><a href="#">Começar</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-6 pricing-container wow fadeInUp" data-wow-delay="0.3s">
+                    <ul class="list-unstyled pricing-table text-center">
+                        <li class="headline"><h5 class="white">User Premium</h5></li>
+                        <li class="price">
+                            <div class="amount">
+                                R$40
+                                <small>/m</small>
+                            </div>
+                        </li>
+                        <li class="info">Adiciona diversas funcionalidades no seu grupo</li>
+                        <li class="features first">Convide muito mais integrantes para seu grupo</li>
+                        <li class="features">Tenha mais de um administrador</li>
+                        <li class="features">Gere gráficos de desempenho individual e coletivo de vários tipos</li>
+                        <li class="features last btn btn-secondary btn-wide"><a href="#">Começar</a></li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+
+    <section id="invite" class="pad-lg light-gray-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-sm-offset-2 text-center">
+                    <i class="fa fa-envelope-o margin-40"></i>
+                    <h2 class="black">Cadastre-se!</h2>
+                    <br />
+                    <p class="black">Inscreva-se agora e comece já a utilizar o sitema</p>
+                    <br />
+
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
+                            <button type="submit" class="btn btn-primary btn-lg btn-blue" data-toggle="modal"
+                                    data-target="#modalCadastro">
+                                Começar
+                            </button>
+                        </div>
+                    </div><!--End Form row-->
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <ul class="list-inline social social2">
+                    <div class="col-md-4 marginsocial">
+                        <li><a href="#"><i class="fa fa-facebook tamanho"></i></a></li>
+                    </div>
+                    <div class="col-md-4 marginsocial">
+                        <li><a href="#"><i class="fa fa-twitter tamanho"></i></a></li>
+                    </div>
+                    <div class="col-md-4 marginsocial">
+                        <li><a href="#"><i class="fa fa-pinterest tamanho"></i></a></li>
+                    </div>
+                    <div class="col-sm-4 copyright col-md-12">
+                        <p class="cpright">
+                            <small>
+                                Copyright &copy; 2017. Todos os direitos reservados.
+                                Criado por <a href="http://task.quest" target="_blank">Task Quest SA</a>
+                            </small>
+                        </p>
+                    </div>
+                </ul>
+            </div>
+
+        </div>
+    </footer>
+
+    @Html.Partial("_RegisterPartial")
+
+    @if (TempData["Alerta"] != null && TempData["Classe"] != null)
+    {
+        @Html.Partial("_BalloonPartial", new Tuple<string, string>(TempData["Alerta"].ToString(), TempData["Classe"].ToString()))
+    }
+
+    <!-- Javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="~Content/js/jquery-1.11.0.min.js"><\/script>')</script>-->
+    <script src="~/Content/js/jquery.min.js"></script>
+    <script src="~/Content/js/wow.min.js"></script>
+    <script src="~/Content/js/bootstrap.min.js"></script>
+    <script src="~/Content/js/spectrum.js"></script>
+    <script src="~/Content/js/spectrum.config.js"></script>
+    <script src="~/Content/js/jquery.validate.js"></script>
+    <script src="~/Content/js/jquery.mask.js"></script>
+    <script src="~/Content/js/index.js"></script>
+    <script src="~/Content/js/balloon.js"></script>
+</body>
 </html>
