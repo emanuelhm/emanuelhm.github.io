@@ -29,7 +29,7 @@
     render: function () {
         $('#task-container div').remove();
         for (var x = 0; x < this.TasksViewModel.length; x++) {
-            var content = "<div class='margin-bottom item' id=" + x + ">" +
+            var /Content = "<div class='margin-bottom item' id=" + x + ">" +
                                 "<a onclick='showAtualizarTaskModal(" + x + ")'><div class='filete' style='background-color: " + quest.Cor + "'></div></a>" +
                                 "<div class='quest-body flex-properties-c'>" +
                                     "<div class='icon-black limit-lines'>" +
@@ -52,7 +52,7 @@
                                     "</div>" +
                                 "</div>" +
                             "</div>";
-            $("#task-container").append(content);
+            $("#task-container").append(/Content);
             $('#' + x + ' .Status').val(this.get(x)["Status"]);
         }
         $('#Nome').val(quest.Nome);
@@ -88,11 +88,11 @@ function showAtualizarTaskModal(index) {
     $('#Feedback div').remove();
     if (quest.get(index)['Status'] === 2) {
         if (quest.get(index)['FeedbackViewModel'] === undefined || quest.get(index)['FeedbackViewModel'] === null) {
-            var content = "<div class='icon-black'><a onclick='showFeedbackModal(" + index + ")'><h4>Criar Feedback<h4></a></div>";
-            $("#Feedback").append(content);
+            var /Content = "<div class='icon-black'><a onclick='showFeedbackModal(" + index + ")'><h4>Criar Feedback<h4></a></div>";
+            $("#Feedback").append(/Content);
         }
         else {
-            var content = "<div><p>Feedback</p><div>" +
+            var /Content = "<div><p>Feedback</p><div>" +
 								"<div class='form-group'>" +
 									"<textarea class='form-control' id='AtualizarTextoFeedback' name='AtualizarTextoFeedback' placeholder='Texto do Feedback' required></textarea>" +
 									"<label for='AtualizarTextoFeedback'></label>" +
@@ -107,7 +107,7 @@ function showAtualizarTaskModal(index) {
 										"<option>5</option>" +
 									"</select>" +
 								"</div>";
-            $('#Feedback').append(content);
+            $('#Feedback').append(/Content);
             $('#AtualizarTextoFeedback').val(quest.get(index)['FeedbackViewModel']['Resposta']);
             $('#AtualizarNota').val(quest.get(index)['FeedbackViewModel']['Nota']);
         }
@@ -342,7 +342,7 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     $.ajax({
-        contentType: 'application/json;',
+        /ContentType: 'application/json;',
         type: "POST",
         url: "/Quest/GetQuests",
         data: JSON.stringify({
@@ -392,7 +392,7 @@ $(document).ready(function () {
         quest.Descricao = $("#Descricao").val();
         quest.Cor = $("#Cor").val();
         $.ajax({
-            contentType: 'application/json;',
+            /ContentType: 'application/json;',
             type: "POST",
             url: "/Quest/AtualizarQuest",
             data: JSON.stringify(quest),

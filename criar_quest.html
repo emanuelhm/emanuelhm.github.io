@@ -2,29 +2,23 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="/Content/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/Content/css/font-awesome.min.css">
-    <link rel="stylesheet" href="/Content/css/style.css">
-    <link rel="stylesheet" href="/Content/css/balloon.css" />
+    <meta name="viewport" /Content="width=device-width, user-scalable=no">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="/Content/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Content/css/font-awesome.min.css">
     <link rel="stylesheet" href="/Content/css/style.css">
     <link rel="stylesheet" href="/Content/css/balloon.css" />
     <link rel="stylesheet" href="/Content/css/spectrum.css">
-
     <title>Criar Quest</title>
 
 </head>
 
 
 <body>
-    <header class="mudarCor" style="background-color: rgb(16, 100, 148);">
+    <header style="background-color: rgb(16, 100, 148);" class="mudarCor">
         <div>
             <p class="txtlogo logo-hidden icon-white">
-                <a href="/index.html" title="Início">
+                <a href="/Home/Inicio" title="Início">
                     <span id="txt-task">Task</span><span id="txt-quest">Quest</span>
                 </a>
             </p>
@@ -52,8 +46,9 @@
     </header>
 
     <section class="pads-bot">
+
         <div class="flex-properties-r">
-            <div class="title-a"><h2>Criar Quest</h2></div>
+            <div class="title-a mudarCorFonte" style="color: rgb(16, 100, 148)"><h2>Criar Quest</h2></div>
             <div class="title-b">
                 <div class="flex-properties-r pads icon-black">
                     <a onclick="submit('formQuest', '/Quest/CriarQuest')"><i class="fa fa-plus elipse" aria-hidden="true"></i></a>
@@ -65,6 +60,7 @@
                 </div>
             </div>
         </div>
+
         <form id="formQuest">
             <input type="hidden" name="GrupoCriadorId" id="GrupoCriadorId" value="@Model.GrupoId" />
             <div class="container flex-properties-c">
@@ -82,13 +78,16 @@
                 </div>
             </div>
         </form>
+
     </section>
+
     <section class="pads-bot">
         <div id="task-container" class="container flex-properties-r margintop"></div>
     </section>
+
     <div class="modal fade" id="modalAdicionarTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-/Content">
                 <div class="modal-header">
                     <h1 class="modal-title" id="exampleModalLabel">Adicionar Task</h1>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -124,10 +123,10 @@
                             <label for="Responsavel">Atribua um responsável para a Task</label>
                             <select class="form-control" id="Responsavel">
                                 <option value="">Todos</option>
-                                <option value="@Util.Encrypt(colaborador.Id.ToString())"></option>
                             </select>
                         </div>
                     </div>
+
                     <div class="modal-footer">
                         <input id="AdicionarTask" type="submit" class="btn btn-secondary btn-cg" value="Criar">
                     </div>
@@ -135,9 +134,10 @@
             </div>
         </div>
     </div>
+
     <div class="modal fade" id="modalAtualizarTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-content">
+            <div class="modal-/Content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
@@ -173,7 +173,6 @@
                             <label for="ResponsavelAtualizar">Atribua um responsável para a Task</label>
                             <select class="form-control" id="ResponsavelAtualizar">
                                 <option value="">Todos</option>
-                                <option value="@Util.Encrypt(colaborador.Id.ToString())">Sobrenome</option>
                             </select>
                         </div>
                     </div>
@@ -185,9 +184,10 @@
             </div>
         </div>
     </div>
+
     <div id="modalDownload" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-sm">
-            <div class="modal-content">
+            <div class="modal-/Content">
                 <div class="modal-header">
                     <form method="post" id="formFiles">
                         <div class="flex-properties-r">
@@ -218,17 +218,16 @@
         </div>
     </div>
 
-    <script src="~/Content/js/jquery.min.js"></script>
-    <script src="~/Content/js/bootstrap.min.js"></script>
-    <script src="~/Content/js/notificacao.js"></script>
-    <script src="~/Content/js/balloon.js"></script>
-    <script src="~/Content/js/link.js"></script>
-    <script src="Content/js/jquery.min.js"></script>
-    <script src="Content/js/spectrum.js"></script>
-    <script src="Content/js/spectrum.config.js"></script>
-    <script src="Content/js/jquery.validate.js"></script>
-    <script src="Content/js/criar-quest.js"></script>
-    <script src="Content/js/showBalloon.js"></script>
 
+    <script src="/Content/js/jquery.min.js"></script>
+    <script src="/Content/js/bootstrap.min.js"></script>
+    <script src="/Content/js/notificacao.js"></script>
+    <script src="/Content/js/balloon.js"></script>
+    <script src="/Content/js/link.js"></script>
+    <script src="/Content/js/spectrum.js"></script>
+    <script src="/Content/js/spectrum.config.js"></script>
+    <script src="/Content/js/jquery.validate.js"></script>
+    <script src="/Content/js/criar-quest.js"></script>
+    <script src="/Content/js/showBalloon.js"></script>
 </body>
 </html>

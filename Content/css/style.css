@@ -18,13 +18,13 @@
 
 .elements{
     display: flex;
-    justify-content: space-around;
+    justify-/Content: space-around;
     width: 45%;
 }
 
 .icon-container{
     width: 20%;
-    justify-content: initial !important;
+    justify-/Content: initial !important;
 }
 
 input:focus {
@@ -46,7 +46,7 @@ header {
     -ms-flex-align: center;
     align-items: center;
     color: white;
-    justify-content: space-around;
+    justify-/Content: space-around;
 }
 
 .dropdown-menu, dropdown-notificacao {
@@ -136,7 +136,7 @@ body {
     flex-direction: row;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-/Content: center;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
 }
@@ -289,7 +289,7 @@ span .limit-lines{
     align-items: center;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-/Content: center;
 }
 
 
@@ -363,7 +363,7 @@ label {
     width: 100%;
     -webkit-box-pack: start;
     -ms-flex-pack: start;
-    justify-content: flex-start;
+    justify-/Content: flex-start;
 }
 
     .pads h3 {
@@ -387,7 +387,7 @@ label {
     margin: 0 auto;
 }
 
-.modal-content {
+.modal-/Content {
     text-align: center;
 }
 
@@ -407,7 +407,7 @@ label {
 
 .modal-body .select-container {
     position: static;
-    width: fit-content;
+    width: fit-/Content;
 }
 
 .modal-body input:not([type='date']) {
@@ -522,9 +522,9 @@ label {
     margin-top: 5%;
     -webkit-box-pack: center;
     -ms-flex-pack: center;
-    justify-content: center;
+    justify-/Content: center;
     margin-top: 5%;
-    justify-content: center;
+    justify-/Content: center;
 }
 
 .input-login {
@@ -574,7 +574,7 @@ label {
     color: rgba(0,0,0,0.6);
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-/Content: center;
 }
 
 .questlist-block {
@@ -607,7 +607,7 @@ label {
     margin-top: 2%;
     margin-bottom: 2%;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-/Content: center;
 }
 
 .quest-cor {
@@ -636,7 +636,7 @@ label {
 .download-item {
     background-color: #f9f9f9;
     align-items: baseline;
-    justify-content: space-between;
+    justify-/Content: space-between;
     flex-wrap: nowrap;
     margin-bottom: 2%;
 }
@@ -653,7 +653,7 @@ label {
 .task-namegroup{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-/Content: center;
 }
 
 .task-group-elipse{
@@ -697,7 +697,7 @@ label {
     .title-b {
         width: 100%;
         -ms-flex-pack: distribute;
-        justify-content: space-around;
+        justify-/Content: space-around;
         margin-bottom: 4%;
     }
 

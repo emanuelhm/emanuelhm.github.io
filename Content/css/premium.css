@@ -12,7 +12,7 @@
 	margin-top: 10%;
 	width: 400px;
 	margin: 0 auto;
-	justify-content: center;
+	justify-/Content: center;
 }
 
 .premium-header{
@@ -44,7 +44,7 @@
 .premium-body li{
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-/Content: center;
 	width: 100%;
 	text-align: center;
 	font-size: 14px;

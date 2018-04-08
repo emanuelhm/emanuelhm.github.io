@@ -403,8 +403,8 @@ $.extend( $.validator, {
 
 			function delegate( event ) {
 
-				// Set form expando on contenteditable
-				if ( !this.form && this.hasAttribute( "contenteditable" ) ) {
+				// Set form expando on /Contenteditable
+				if ( !this.form && this.hasAttribute( "/Contenteditable" ) ) {
 					this.form = $( this ).closest( "form" )[ 0 ];
 				}
 
@@ -421,7 +421,7 @@ $.extend( $.validator, {
 				":text, [type='password'], [type='file'], select, textarea, [type='number'], [type='search'], " +
 				"[type='tel'], [type='url'], [type='email'], [type='datetime'], [type='date'], [type='month'], " +
 				"[type='week'], [type='time'], [type='datetime-local'], [type='range'], [type='color'], " +
-				"[type='radio'], [type='checkbox'], [contenteditable], [type='button']", delegate )
+				"[type='radio'], [type='checkbox'], [/Contenteditable], [type='button']", delegate )
 
 				// Support: Chrome, oldIE
 				// "select" is provided as event.target when clicking a option
@@ -627,17 +627,17 @@ $.extend( $.validator, {
 
 			// Select all valid inputs inside the form (no submit or reset buttons)
 			return $( this.currentForm )
-			.find( "input, select, textarea, [contenteditable]" )
+			.find( "input, select, textarea, [/Contenteditable]" )
 			.not( ":submit, :reset, :image, :disabled" )
 			.not( this.settings.ignore )
 			.filter( function() {
-				var name = this.name || $( this ).attr( "name" ); // For contenteditable
+				var name = this.name || $( this ).attr( "name" ); // For /Contenteditable
 				if ( !name && validator.settings.debug && window.console ) {
 					console.error( "%o has no name assigned", this );
 				}
 
-				// Set form expando on contenteditable
-				if ( this.hasAttribute( "contenteditable" ) ) {
+				// Set form expando on /Contenteditable
+				if ( this.hasAttribute( "/Contenteditable" ) ) {
 					this.form = $( this ).closest( "form" )[ 0 ];
 				}
 
@@ -694,7 +694,7 @@ $.extend( $.validator, {
 				return element.validity.badInput ? "NaN" : $element.val();
 			}
 
-			if ( element.hasAttribute( "contenteditable" ) ) {
+			if ( element.hasAttribute( "/Contenteditable" ) ) {
 				val = $element.text();
 			} else {
 				val = $element.val();

@@ -942,7 +942,7 @@ if (typeof jQuery === 'undefined') {
 
     if (this.options.remote) {
       this.$element
-        .find('.modal-content')
+        .find('.modal-/Content')
         .load(this.options.remote, $.proxy(function () {
           this.$element.trigger('loaded.bs.modal')
         }, this))
@@ -1428,7 +1428,7 @@ if (typeof jQuery === 'undefined') {
   Tooltip.prototype.show = function () {
     var e = $.Event('show.bs.' + this.type)
 
-    if (this.hasContent() && this.enabled) {
+    if (this.has/Content() && this.enabled) {
       this.$element.trigger(e)
 
       var inDom = $.contains(this.$element[0].ownerDocument.documentElement, this.$element[0])
@@ -1439,7 +1439,7 @@ if (typeof jQuery === 'undefined') {
 
       var tipId = this.getUID(this.type)
 
-      this.setContent()
+      this.set/Content()
       $tip.attr('id', tipId)
       this.$element.attr('aria-describedby', tipId)
 
@@ -1557,7 +1557,7 @@ if (typeof jQuery === 'undefined') {
       .css(isVertical ? 'top' : 'left', '')
   }
 
-  Tooltip.prototype.setContent = function () {
+  Tooltip.prototype.set/Content = function () {
     var $tip  = this.tip()
     var title = this.getTitle()
 
@@ -1604,7 +1604,7 @@ if (typeof jQuery === 'undefined') {
     }
   }
 
-  Tooltip.prototype.hasContent = function () {
+  Tooltip.prototype.has/Content = function () {
     return this.getTitle()
   }
 
@@ -1800,8 +1800,8 @@ if (typeof jQuery === 'undefined') {
   Popover.DEFAULTS = $.extend({}, $.fn.tooltip.Constructor.DEFAULTS, {
     placement: 'right',
     trigger: 'click',
-    content: '',
-    template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-content"></div></div>'
+    /Content: '',
+    template: '<div class="popover" role="tooltip"><div class="arrow"></div><h3 class="popover-title"></h3><div class="popover-/Content"></div></div>'
   })
 
 
@@ -1816,35 +1816,35 @@ if (typeof jQuery === 'undefined') {
     return Popover.DEFAULTS
   }
 
-  Popover.prototype.setContent = function () {
+  Popover.prototype.set/Content = function () {
     var $tip    = this.tip()
     var title   = this.getTitle()
-    var content = this.getContent()
+    var /Content = this.get/Content()
 
     $tip.find('.popover-title')[this.options.html ? 'html' : 'text'](title)
-    $tip.find('.popover-content').children().detach().end()[ // we use append for html objects to maintain js events
-      this.options.html ? (typeof content == 'string' ? 'html' : 'append') : 'text'
-    ](content)
+    $tip.find('.popover-/Content').children().detach().end()[ // we use append for html objects to maintain js events
+      this.options.html ? (typeof /Content == 'string' ? 'html' : 'append') : 'text'
+    ](/Content)
 
     $tip.removeClass('fade top bottom left right in')
 
     // IE8 doesn't accept hiding via the `:empty` pseudo selector, we have to do
-    // this manually by checking the contents.
+    // this manually by checking the /Contents.
     if (!$tip.find('.popover-title').html()) $tip.find('.popover-title').hide()
   }
 
-  Popover.prototype.hasContent = function () {
-    return this.getTitle() || this.getContent()
+  Popover.prototype.has/Content = function () {
+    return this.getTitle() || this.get/Content()
   }
 
-  Popover.prototype.getContent = function () {
+  Popover.prototype.get/Content = function () {
     var $e = this.$element
     var o  = this.options
 
-    return $e.attr('data-content')
-      || (typeof o.content == 'function' ?
-            o.content.call($e[0]) :
-            o.content)
+    return $e.attr('data-/Content')
+      || (typeof o./Content == 'function' ?
+            o./Content.call($e[0]) :
+            o./Content)
   }
 
   Popover.prototype.arrow = function () {

@@ -27,30 +27,30 @@
         var len = this.tasks.length - 1;
         var cor = $("#Cor").val();
         for (var x = 0; x < this.tasks.length; x++) {
-            var content = "<div class='margin-bottom item' id=" + x + ">" +
-                                "<a onclick='showAtualizarTaskModal(" + x + ")'><div class='filete' style='background-color: " + cor + "'></div></a>" +
-                                "<div class='quest-body flex-properties-c'>" +
-                                    "<div class='icon-black limit-lines'>" +
-                                        "<a onclick='showAtualizarTaskModal(" + x + ")'>" +
-                                            "<h4 class='Nome'>" + this.get(x)['Nome'] + "</h4>" +
-                                        "</a>" +
-                                    "</div>" +
-                                    "<div class='limit-lines'>" +
-                                        "<h4 class='Descricao'>" + this.get(x)["Descricao"] + "</h4>" +
-                                    "</div>" +
-                                    "<div>" +
-                                        "<h4 class='DataConclusao'>" + this.get(x)["DataConclusao"].split('-').reverse().join('/') + "</h4>" +
-                                    "</div>" +
-                                    "<div class='select-container'>" +
-                                        "<select class='form-control Status' onchange='mudarStatus(" + x + ")'>" +
-                                            "<option value='0'>A Fazer</option>" +
-                                            "<option value='1'>Fazendo</option>" +
-                                            "<option value='2'>Feito</option>" +
-                                        "</select>" +
-                                    "</div>" +
-                                "</div>" +
-                            "</div>";
-            $("#task-container").append(content);
+            var /Content = "<div class='margin-bottom item' id=" + x + ">" +
+                "<a onclick='showAtualizarTaskModal(" + x + ")'><div class='filete' style='background-color: " + cor + "'></div></a>" +
+                "<div class='quest-body flex-properties-c'>" +
+                "<div class='icon-black limit-lines'>" +
+                "<a onclick='showAtualizarTaskModal(" + x + ")'>" +
+                "<h4 class='Nome'>" + this.get(x)['Nome'] + "</h4>" +
+                "</a>" +
+                "</div>" +
+                "<div class='limit-lines'>" +
+                "<h4 class='Descricao'>" + this.get(x)["Descricao"] + "</h4>" +
+                "</div>" +
+                "<div>" +
+                "<h4 class='DataConclusao'>" + this.get(x)["DataConclusao"].split('-').reverse().join('/') + "</h4>" +
+                "</div>" +
+                "<div class='select-container'>" +
+                "<select class='form-control Status' onchange='mudarStatus(" + x + ")'>" +
+                "<option value='0'>A Fazer</option>" +
+                "<option value='1'>Fazendo</option>" +
+                "<option value='2'>Feito</option>" +
+                "</select>" +
+                "</div>" +
+                "</div>" +
+                "</div>";
+            $("#task-container").append(/Content);
             $('#Status').val(this.get(len)["Status"]);
         }
     }
@@ -66,7 +66,7 @@ function renderFiles(reference) {
                             <input type="hidden" value="${file.Id}" name="Id" />
                         </form>
                         <div class="download-info">
-                            ${ file.Response === "Image" ? `<img src="../Images/${file.Url.split('.')[0]+'-min.jpg'}">` : `<i class="fa fa-file" aria-hidden="true"></i>` }
+                            ${ file.Response === "Image" ? `<img src="../Images/${file.Url.split('.')[0] + '-min.jpg'}">` : `<i class="fa fa-file" aria-hidden="true"></i>`}
                         </div>
                         <div class="download-info icon-black">
                             <a class="limit-lines" title="${file.Nome}" onclick="$('#fileForm${index}').submit()"><p>${file.Nome}</p></a>
@@ -131,27 +131,27 @@ $("#Concluir").click(function () {
 
 function deletar(Id, div) {
     $.post("/File/Delete", { Id: Id })
-    .done(function (data) {
-        if (data === "Ok") {
-            showBalloon("Deletado com sucesso", "green-alert");
-            $("#" + div).remove();
+        .done(function (data) {
+            if (data === "Ok") {
+                showBalloon("Deletado com sucesso", "green-alert");
+                $("#" + div).remove();
 
-            var found = false;
-            for (var x = 0; x < quest.TasksViewModel && !found; x++) {
-                for (var y = 0; y < quest.TasksViewModel[x].Files.length && !found; y++) {
-                    if (quest.TasksViewModel[x].Files[y].Id === Id) {
-                        quest.TasksViewModel[x].Files.splice(y, 1);
-                        found = true;
+                var found = false;
+                for (var x = 0; x < quest.TasksViewModel && !found; x++) {
+                    for (var y = 0; y < quest.TasksViewModel[x].Files.length && !found; y++) {
+                        if (quest.TasksViewModel[x].Files[y].Id === Id) {
+                            quest.TasksViewModel[x].Files.splice(y, 1);
+                            found = true;
+                        }
                     }
                 }
             }
-        }
-        else if (data === "Error")
+            else if (data === "Error")
+                showBalloon("Algo deu errado", "yellow-alert");
+        })
+        .fail(function () {
             showBalloon("Algo deu errado", "yellow-alert");
-    })
-    .fail(function () {
-        showBalloon("Algo deu errado", "yellow-alert");
-    });
+        });
 }
 
 var Files = [];
@@ -222,7 +222,7 @@ document.getElementById('formFiles').onsubmit = function () {
                             else
                                 validFiles.push(file);
                         });
-                        if (previousModal === "modalAtualizarTask"){
+                        if (previousModal === "modalAtualizarTask") {
                             var index = $("#AtualizarTask").data('index');
                             quest.tasks[index].Files = quest.get(index).Files.concat(validFiles);
                             renderFiles(quest.get(index).Files);
@@ -281,9 +281,6 @@ $(document).ready(function () {
         }
 
     });
-});
-
-$(document).ready(function () {
 
     quest.render();
 
@@ -301,27 +298,17 @@ $(document).ready(function () {
         $.each(quest.tasks, function (index, value) {
             quest.setProp(index, "DataConclusao", new Date(value.DataConclusao));
         });
-        $.ajax({
-            contentType: 'application/json;',
-            type: "POST",
-            url: "/Quest/CriarQuestPost",
-            data: JSON.stringify({
-                "Nome": $("#Nome").val(),
-                "Descricao": $("#Descricao").val(),
-                "Cor": $("#Cor").val(),
-                "GrupoCriadorId": $("#GrupoCriadorId").val(),
-                "TasksViewModel": quest.tasks
-            }),
-            success: function (response) {
-                if (response == "true")
-                    window.location.href = "/index.html";
-                else
-                    showBalloon("Algo deu errado", "yellow-alert");
-            },
-            error: function () {
-                showBalloon("Algo deu errado", "yellow-alert");
-            }
+
+        var data = JSON.stringify({
+            "Nome": $("#Nome").val(),
+            "Descricao": $("#Descricao").val(),
+            "Cor": $("#Cor").val(),
+            "GrupoCriadorId": $("#GrupoCriadorId").val(),
+            "TasksViewModel": quest.tasks
         });
+
+        sessionStorage.setItem("quest", data);
+        window.location.href = "file:///C:/Users/EMANUELHIROSHIMIYAGA/Desktop/emanuelhm.github.io/inicio.html";
     });
 
     $('#AdicionarTask').click(function (event) {

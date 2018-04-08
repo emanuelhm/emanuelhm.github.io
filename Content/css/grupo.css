@@ -9,7 +9,7 @@
 	display: flex;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	        justify-/Content: space-between;
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
@@ -47,7 +47,7 @@
 	        flex-direction: row;
 	-webkit-box-pack: start;
 	    -ms-flex-pack: start;
-	        justify-content: flex-start;
+	        justify-/Content: flex-start;
 	-webkit-box-align: center;
 	    -ms-flex-align: center;
 	        align-items: center;
@@ -65,7 +65,7 @@
 	display: flex;
 	-webkit-box-pack: justify;
 	    -ms-flex-pack: justify;
-	        justify-content: space-between;
+	        justify-/Content: space-between;
 }
 
 .modalfooter-container input{

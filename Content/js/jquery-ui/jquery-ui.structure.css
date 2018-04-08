@@ -35,7 +35,7 @@
 }
 .ui-helper-clearfix:before,
 .ui-helper-clearfix:after {
-	content: "";
+	/Content: "";
 	display: table;
 	border-collapse: collapse;
 }

@@ -37,7 +37,7 @@ var quest = {
     render: function () {
         $('#task-container div').remove();
         for (var x = 0; x < this.TasksViewModel.length; x++) {
-            var content =   "<div class='margin-bottom item' id=" + x + ">" +
+            var /Content =   "<div class='margin-bottom item' id=" + x + ">" +
                                 "<a onclick='showAtualizarTaskModal(" + x + ")'><div class='filete' style='background-color: " + quest.Cor + "'></div></a>" +
                                 "<div class='quest-body flex-properties-c'>" +
                                     "<div class='icon-black limit-lines'>" +
@@ -60,7 +60,7 @@ var quest = {
                                     "</div>" +
                                 "</div>" +
                             "</div>";
-            $("#task-container").append(content);
+            $("#task-container").append(/Content);
             $('#' + x + ' .Status').val(this.get(x)["Status"]);
             $('#Nome').text(quest.Nome);
             $("#Descricao").text(quest.Descricao);
@@ -318,7 +318,7 @@ $(document).ready(function () {
 $(document).ready(function () {
 
     $.ajax({
-        contentType: 'application/json;',
+        /ContentType: 'application/json;',
         type: "POST",
         url: "/Quest/GetQuests",
         data: JSON.stringify({
