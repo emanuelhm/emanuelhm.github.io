@@ -308,7 +308,7 @@ $(document).ready(function () {
         });
 
         sessionStorage.setItem("quest", data);
-        window.location.href = "file:///C:/Users/EMANUELHIROSHIMIYAGA/Desktop/emanuelhm.github.io/inicio.html";
+        window.location.href = "/inicio.html";
     });
 
     $('#AdicionarTask').click(function (event) {

@@ -103,7 +103,7 @@
         },
         submitHandler: function () {
             sessionStorage.setItem("cor", $("#Cor").val());
-            window.location.href = "file:///C:/Users/EMANUELHIROSHIMIYAGA/Desktop/emanuelhm.github.io/inicio.html";
+            window.location.href = "/inicio.html";
         }
     });
 

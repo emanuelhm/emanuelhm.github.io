@@ -78,7 +78,7 @@ $(function () {
             sessionStorage.setItem("nomeGrupo", $("#Nome").val());
             sessionStorage.setItem("descricaoGrupo", $("#Descricao").val());
             sessionStorage.setItem("corGrupo", $("#Cor").val());
-            window.location.href = "file:///C:/Users/EMANUELHIROSHIMIYAGA/Desktop/emanuelhm.github.io/grupo.html";
+            window.location.href = "/grupo.html";
         }
     });
 });
