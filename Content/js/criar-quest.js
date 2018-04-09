@@ -27,7 +27,7 @@
         var len = this.tasks.length - 1;
         var cor = $("#Cor").val();
         for (var x = 0; x < this.tasks.length; x++) {
-            var /Content = "<div class='margin-bottom item' id=" + x + ">" +
+            var Content = "<div class='margin-bottom item' id=" + x + ">" +
                 "<a onclick='showAtualizarTaskModal(" + x + ")'><div class='filete' style='background-color: " + cor + "'></div></a>" +
                 "<div class='quest-body flex-properties-c'>" +
                 "<div class='icon-black limit-lines'>" +
@@ -50,7 +50,7 @@
                 "</div>" +
                 "</div>" +
                 "</div>";
-            $("#task-container").append(/Content);
+            $("#task-container").append(Content);
             $('#Status').val(this.get(len)["Status"]);
         }
     }

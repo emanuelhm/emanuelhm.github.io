@@ -1,8 +1,8 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" /Content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="/Content/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Content/css/font-awesome.min.css">
@@ -22,16 +22,14 @@
     <header class="mudarCor" style="background-color: rgb(16, 100, 148);">
         <div>
             <p class="txtlogo logo-hidden icon-white">
-                <a href="/index.html" title="Inï¿½cio">
+                <a href="/index.html" title="Início">
                     <span id="txt-task">Task</span><span id="txt-quest">Quest</span>
                 </a>
             </p>
         </div>
         <div class="elements">
             <div class="icon-container mobile-hidden"><li class="li-hidden icon-white" title="Grupos"><a href="/Home/Grupos"><i class="fa fa-group" aria-hidden="true"></i></a></li></div>
-            <div class="icon-container mobile-hidden"><li class="li-hidden icon-white" title="Pendï¿½ncias"><a href="/Home/Quests"><i class="fa fa-check" aria-hidden="true"></i></a></li></div>
-            <div class="icon-container icon-white flex-properties-r">
-            </div>
+            <div class="icon-container mobile-hidden"><li class="li-hidden icon-white" title="Pendências"><a href="/Home/Quests"><i class="fa fa-check" aria-hidden="true"></i></a></li></div>
             <div class="icon-container icon-white">
                 <li class="dropdown li-hidden" title="Menu">
                     <a class="header-a dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -55,20 +53,20 @@
             <div class="title-a mudarCorFonte" style="color: rgb(16, 100, 148);"><h2>Grupo</h2></div>
             <div class="title-b">
                 <div class="flex-properties-r pads icon-black">
-                    <a href="/criar_quest.html"><i class="fa fa-plus elipse" aria-hidden="true"></i></a>
-                    <h3><a href="/criar_quest.html">Criar Quest</a></h3>
+                    <a href="/criar-quest.html"><i class="fa fa-plus elipse" aria-hidden="true"></i></a>
+                    <h3><a href="/criar-quest.html">Criar Quest</a></h3>
                 </div>
                 <div class="flex-properties-r pads icon-black">
-                    <a onclick="link(ExcluirGrupo)"><i class="fa fa-times elipse" aria-hidden="true"></i></a>
-                    <h3><a onclick="link(ExcluirGrupo)">Excluir Grupo</a></h3>
+                    <a><i class="fa fa-times elipse" aria-hidden="true"></i></a>
+                    <h3><a>Excluir Grupo</a></h3>
                 </div>
                 <div class="flex-properties-r pads icon-black">
                     <a data-target="#modalEditarGrupo" data-toggle="modal"><i class="fa fa-pencil-square-o  elipse" aria-hidden="true"></i></a>
                     <h3><a data-target="#modalEditarGrupo" data-toggle="modal">Editar Grupo</a></h3>
                 </div>
                 <div class="flex-properties-r pads icon-black">
-                    <a onclick="link(PremiumCancelar)"><i class="fa fa-diamond elipse" aria-hidden="true"></i></a>
-                    <h3><a onclick="link(PremiumCancelar)">Premium</a></h3>
+                    <a><i class="fa fa-diamond elipse" aria-hidden="true"></i></a>
+                    <h3><a>Premium</a></h3>
                 </div>
             </div>
         </div>
@@ -108,7 +106,7 @@
 
     <div class="modal fade" id="modalAdicionarIntegrante" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-/Content">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title" id="exampleModalLabel">Adicionar Integrante</h1>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -133,16 +131,16 @@
 
     <div class="modal fade" id="modalConfirmacao" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-/Content">
+            <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title" id="exampleModalLabel">Vocï¿½ tem certeza?</h1>
+                    <h1 class="modal-title" id="exampleModalLabel">Você tem certeza?</h1>
                 </div>
                 <form method="post" id="formConfirmacao">
                     <div class="modal-footer modalfooter-container">
                         <input type="hidden" name="Email" />
                         <input type="hidden" name="GrupoId" value="@Model.Id" />
                         <input type="submit" class="btn btn-secondary btn-cg" value="Sim">
-                        <input type="submit" data-dismiss="modal" class="btn btn-secondary btn-cg" value="Nï¿½o">
+                        <input type="submit" data-dismiss="modal" class="btn btn-secondary btn-cg" value="Não">
                     </div>
                 </form>
             </div>
@@ -151,7 +149,7 @@
 
     <div class="modal fade" id="modalEditarGrupo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-/Content">
+            <div class="modal-content">
                 <form id="formCriarGrupo" action="/Grupo/EditarGrupo" method="post">
                     <input type="hidden" value="@Model.Id" name="Id" />
                     <div class="modal-header">
@@ -166,7 +164,7 @@
                             <label for="Nome"></label>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" required id="Descricao" name="Descricao" placeholder="Descriï¿½ï¿½o do Grupo">@Model.Descricao</textarea>
+                            <textarea class="form-control" required id="Descricao" name="Descricao" placeholder="Descrição do Grupo">@Model.Descricao</textarea>
                             <label for="Descricao"></label>
                         </div>
                         <div class="form-group">
@@ -184,7 +182,7 @@
 
     <div class="modal fade" id="modalIntegrante" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-/Content">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title" id="IntegranteNome"></h1>
                 </div>
@@ -210,5 +208,6 @@
     <script src="/Content/js/showBalloon.js"></script>
     <script src="/Content/js/integrante.js"></script>
     <script src="/Content/js/Chart.bundle.js"></script>
+
 </body>
 </html>

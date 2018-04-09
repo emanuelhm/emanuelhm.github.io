@@ -2,13 +2,13 @@
 <html lang="pt-br">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" /Content="width=device-width, user-scalable=no">
+    <meta name="viewport" content="width=device-width, user-scalable=no">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="/Content/css/bootstrap.min.css">
     <link rel="stylesheet" href="/Content/css/font-awesome.min.css">
     <link rel="stylesheet" href="/Content/css/style.css">
-    <link rel="stylesheet" href="/Content/css/balloon.css" />
     <link rel="stylesheet" href="/Content/css/spectrum.css">
+    <link rel="stylesheet" href="/Content/css/balloon.css" />
     <title>Criar Quest</title>
 
 </head>
@@ -26,8 +26,6 @@
         <div class="elements">
             <div class="icon-container mobile-hidden"><li class="li-hidden icon-white" title="Grupos"><a href="/Home/Grupos"><i class="fa fa-group" aria-hidden="true"></i></a></li></div>
             <div class="icon-container mobile-hidden"><li class="li-hidden icon-white" title="Pendências"><a href="/Home/Quests"><i class="fa fa-check" aria-hidden="true"></i></a></li></div>
-            <div class="icon-container icon-white flex-properties-r">
-            </div>
             <div class="icon-container icon-white">
                 <li class="dropdown li-hidden" title="Menu">
                     <a class="header-a dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
@@ -48,7 +46,7 @@
     <section class="pads-bot">
 
         <div class="flex-properties-r">
-            <div class="title-a mudarCorFonte" style="color: rgb(16, 100, 148)"><h2>Criar Quest</h2></div>
+            <div class="title-a mudarCorFonte" style="color: rgb(16, 100, 148);"><h2>Criar Quest</h2></div>
             <div class="title-b">
                 <div class="flex-properties-r pads icon-black">
                     <a onclick="submit('formQuest', '/Quest/CriarQuest')"><i class="fa fa-plus elipse" aria-hidden="true"></i></a>
@@ -87,7 +85,7 @@
 
     <div class="modal fade" id="modalAdicionarTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-            <div class="modal-/Content">
+            <div class="modal-content">
                 <div class="modal-header">
                     <h1 class="modal-title" id="exampleModalLabel">Adicionar Task</h1>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -125,109 +123,112 @@
                                 <option value="">Todos</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div class="modal-footer">
-                        <input id="AdicionarTask" type="submit" class="btn btn-secondary btn-cg" value="Criar">
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade" id="modalAtualizarTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-/Content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    <h1 class="modal-title" id="exampleModalLabel">Atualizar Task</h1>
                 </div>
-                <form id="formAtualizarTaskModal">
-                    <div class="modal-body">
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="NomeTaskAtualizar" name="NomeTaskAtualizar" placeholder="Nome da Task">
-                            <label for="NomeTaskAtualizar"></label>
-                        </div>
-                        <div class="form-group">
-                            <textarea class="form-control" id="DescricaoTaskAtualizar" name="DescricaoTaskAtualizar" placeholder="Descrição da Task"></textarea>
-                            <label for="DescricaoTaskAtualizar"></label>
-                        </div>
-                        <div class="form-group">
-                            <p>Escolha a data de conclusão da Task</p>
-                            <input class="form-control" type="date" id="DataConclusaoAtualizar" name="DataConclusaoAtualizar">
-                            <label for="DataConclusaoAtualizar"></label>
-                        </div>
-                        <div class="select-container">
-                            <select class="form-control" id="DificuldadeAtualizar">
-                                <option value="0">Fácil</option>
-                                <option value="1">Médio</option>
-                                <option value="2">Difícil</option>
-                            </select>
-                        </div>
-                        <div class="form-group" title="Subir Arquivos">
-                            <a onclick="change('modalAtualizarTask')"><i class="fa fa-download" aria-hidden="true"></i></a>
-                        </div>
-                        <div class="select-container">
-                            <label for="ResponsavelAtualizar">Atribua um responsável para a Task</label>
-                            <select class="form-control" id="ResponsavelAtualizar">
-                                <option value="">Todos</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button id="AtualizarTask" class="btn btn-secondary btn-cg">Atualizar</button>
-                        <button id="ExcluirTask" class="btn btn-secondary btn-cg">Excluir Task</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
 
-    <div id="modalDownload" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-            <div class="modal-/Content">
-                <div class="modal-header">
-                    <form method="post" id="formFiles">
-                        <div class="flex-properties-r">
-                            <div class="input-group">
-                                <label class="input-group-btn">
-                                    <span class="btn btn-primary">
-                                        Adicionar arquivos <input id="Files" type="file" style="display: none;" multiple>
-                                    </span>
-                                </label>
-                                <input id="textFiles" type="text" class="form-control" readonly>
-                                <label class="input-group-btn">
-                                    <button class="btn btn-primary">
-                                        Enviar
-                                    </button>
-                                </label>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-body">
-                    <div id="data"></div>
-                    <div id="load"></div>
-                </div>
                 <div class="modal-footer">
-                    <button name="Concluir" id="Concluir" class="btn btn-secondary btn-cg">Concluir</button>
+                    <input id="AdicionarTask" type="submit" class="btn btn-secondary btn-cg" value="Criar">
                 </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalAtualizarTask" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h1 class="modal-title" id="exampleModalLabel">Atualizar Task</h1>
+            </div>
+            <form id="formAtualizarTaskModal">
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="NomeTaskAtualizar" name="NomeTaskAtualizar" placeholder="Nome da Task">
+                        <label for="NomeTaskAtualizar"></label>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" id="DescricaoTaskAtualizar" name="DescricaoTaskAtualizar" placeholder="Descrição da Task"></textarea>
+                        <label for="DescricaoTaskAtualizar"></label>
+                    </div>
+                    <div class="form-group">
+                        <p>Escolha a data de conclusão da Task</p>
+                        <input class="form-control" type="date" id="DataConclusaoAtualizar" name="DataConclusaoAtualizar">
+                        <label for="DataConclusaoAtualizar"></label>
+                    </div>
+                    <div class="select-container">
+                        <select class="form-control" id="DificuldadeAtualizar">
+                            <option value="0">Fácil</option>
+                            <option value="1">Médio</option>
+                            <option value="2">Difícil</option>
+                        </select>
+                    </div>
+                    <div class="form-group" title="Subir Arquivos">
+                        <a onclick="change('modalAtualizarTask')"><i class="fa fa-download" aria-hidden="true"></i></a>
+                    </div>
+                    <div class="select-container">
+                        <label for="ResponsavelAtualizar">Atribua um responsável para a Task</label>
+                        <select class="form-control" id="ResponsavelAtualizar">
+                            <option value="">Todos</option>
+                        </select>
+                    </div>
+                }
+            </div>
+            <div class="modal-footer">
+                <button id="AtualizarTask" class="btn btn-secondary btn-cg">Atualizar</button>
+                <button id="ExcluirTask" class="btn btn-secondary btn-cg">Excluir Task</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<div id="modalDownload" class="modal fade in" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <form method="post" id="formFiles">
+                    <div class="flex-properties-r">
+                        <div class="input-group">
+                            <label class="input-group-btn">
+                                <span class="btn btn-primary">
+                                    Adicionar arquivos <input id="Files" type="file" style="display: none;" multiple>
+                                </span>
+                            </label>
+                            <input id="textFiles" type="text" class="form-control" readonly>
+                            <label class="input-group-btn">
+                                <button class="btn btn-primary">
+                                    Enviar
+                                </button>
+                            </label>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+                <div id="data"></div>
+                <div id="load"></div>
+            </div>
+            <div class="modal-footer">
+                <button name="Concluir" id="Concluir" class="btn btn-secondary btn-cg">Concluir</button>
             </div>
         </div>
     </div>
+</div>
 
 
-    <script src="/Content/js/jquery.min.js"></script>
-    <script src="/Content/js/bootstrap.min.js"></script>
-    <script src="/Content/js/notificacao.js"></script>
-    <script src="/Content/js/balloon.js"></script>
-    <script src="/Content/js/link.js"></script>
-    <script src="/Content/js/spectrum.js"></script>
-    <script src="/Content/js/spectrum.config.js"></script>
-    <script src="/Content/js/jquery.validate.js"></script>
-    <script src="/Content/js/criar-quest.js"></script>
-    <script src="/Content/js/showBalloon.js"></script>
+
+<script src="/Content/js/jquery.min.js"></script>
+<script src="/Content/js/bootstrap.min.js"></script>
+<script src="/Content/js/notificacao.js"></script>
+<script src="/Content/js/balloon.js"></script>
+<script src="/Content/js/link.js"></script>
+<script src="/Content/js/spectrum.js"></script>
+<script src="/Content/js/spectrum.config.js"></script>
+<script src="/Content/js/jquery.validate.js"></script>
+<script src="/Content/js/criar-quest.js"></script>
+<script src="/Content/js/showBalloon.js"></script>
+
 </body>
 </html>
