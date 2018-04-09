@@ -23,9 +23,9 @@ License: MIT
 /* Fix for * { box-sizing: border-box; } */
 .sp-container,
 .sp-container * {
-    -webkit-box-sizing: /Content-box;
-       -moz-box-sizing: /Content-box;
-            box-sizing: /Content-box;
+    -webkit-box-sizing: content-box;
+       -moz-box-sizing: content-box;
+            box-sizing: content-box;
 }
 
 /* http://ansciath.tumblr.com/post/7347495869/css-aspect-ratio */
@@ -214,7 +214,7 @@ License: MIT
 }
 
 /* Clearfix hack */
-.sp-cf:before, .sp-cf:after { /Content: ""; display: table; }
+.sp-cf:before, .sp-cf:after { content: ""; display: table; }
 .sp-cf:after { clear: both; }
 .sp-cf { *zoom: 1; }
 

@@ -891,7 +891,7 @@ $.widget( "ui.tabs", {
 		},
 		collapsible: false,
 		event: "click",
-		heightStyle: "/Content",
+		heightStyle: "content",
 		hide: null,
 		show: null,
 
@@ -929,7 +929,7 @@ $.widget( "ui.tabs", {
 
 		this.running = false;
 
-		this._addClass( "ui-tabs", "ui-widget ui-widget-/Content" );
+		this._addClass( "ui-tabs", "ui-widget ui-widget-content" );
 		this._toggleClass( "ui-tabs-collapsible", null, options.collapsible );
 
 		this._processTabs();
@@ -1321,7 +1321,7 @@ $.widget( "ui.tabs", {
 		} );
 
 		this.panels.attr( "role", "tabpanel" );
-		this._addClass( this.panels, "ui-tabs-panel", "ui-widget-/Content" );
+		this._addClass( this.panels, "ui-tabs-panel", "ui-widget-content" );
 
 		// Avoid memory leaks (#10056)
 		if ( prevTabs ) {
@@ -1618,7 +1618,7 @@ $.widget( "ui.tabs", {
 
 		this.panels.show();
 
-		if ( this.options.heightStyle !== "/Content" ) {
+		if ( this.options.heightStyle !== "content" ) {
 			this.panels.css( "height", "" );
 		}
 	},

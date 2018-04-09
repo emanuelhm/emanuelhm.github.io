@@ -1217,7 +1217,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 		assert(function( div ) {
 			// Select is set to empty string on purpose
 			// This is to test IE's treatment of not explicitly
-			// setting a boolean /Content attribute,
+			// setting a boolean content attribute,
 			// since its presence should be enough
 			// http://bugs.jquery.com/ticket/12359
 			docElem.appendChild( div ).innerHTML = "<a id='" + expando + "'></a>" +
@@ -1552,10 +1552,10 @@ getText = Sizzle.getText = function( elem ) {
 			ret += getText( node );
 		}
 	} else if ( nodeType === 1 || nodeType === 9 || nodeType === 11 ) {
-		// Use text/Content for elements
+		// Use textContent for elements
 		// innerText usage removed for consistency of new lines (jQuery #11153)
-		if ( typeof elem.text/Content === "string" ) {
-			return elem.text/Content;
+		if ( typeof elem.textContent === "string" ) {
+			return elem.textContent;
 		} else {
 			// Traverse its children
 			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
@@ -1918,7 +1918,7 @@ Expr = Sizzle.selectors = {
 		"contains": markFunction(function( text ) {
 			text = text.replace( runescape, funescape );
 			return function( elem ) {
-				return ( elem.text/Content || elem.innerText || getText( elem ) ).indexOf( text ) > -1;
+				return ( elem.textContent || elem.innerText || getText( elem ) ).indexOf( text ) > -1;
 			};
 		}),
 
@@ -1990,10 +1990,10 @@ Expr = Sizzle.selectors = {
 			return elem.selected === true;
 		},
 
-		// /Contents
+		// Contents
 		"empty": function( elem ) {
 			// http://www.w3.org/TR/selectors/#empty-pseudo
-			// :empty is negated by element (1) or /Content nodes (text: 3; cdata: 4; entity ref: 5),
+			// :empty is negated by element (1) or content nodes (text: 3; cdata: 4; entity ref: 5),
 			//   but not by others (comment: 8; processing instruction: 7; etc.)
 			// nodeType < 6 works because attributes (2) do not appear as children
 			for ( elem = elem.firstChild; elem; elem = elem.nextSibling ) {
@@ -2990,7 +2990,7 @@ var rparentsprev = /^(?:parents|prev(?:Until|All))/,
 	// methods guaranteed to produce a unique set when starting from a unique set
 	guaranteedUnique = {
 		children: true,
-		/Contents: true,
+		contents: true,
 		next: true,
 		prev: true
 	};
@@ -3118,9 +3118,9 @@ jQuery.each( {
 	children: function( elem ) {
 		return siblings( elem.firstChild );
 	},
-	/Contents: function( elem ) {
+	contents: function( elem ) {
 		return jQuery.nodeName( elem, "iframe" ) ?
-			elem./ContentDocument || elem./ContentWindow.document :
+			elem.contentDocument || elem.contentWindow.document :
 			jQuery.merge( [], elem.childNodes );
 	}
 }, function( name, fn ) {
@@ -3594,7 +3594,7 @@ jQuery.extend( {
  */
 function detach() {
 	if ( document.addEventListener ) {
-		document.removeEventListener( "DOM/ContentLoaded", completed );
+		document.removeEventListener( "DOMContentLoaded", completed );
 		window.removeEventListener( "load", completed );
 
 	} else {
@@ -3633,11 +3633,11 @@ jQuery.ready.promise = function( obj ) {
 			// Handle it asynchronously to allow scripts the opportunity to delay ready
 			window.setTimeout( jQuery.ready );
 
-		// Standards-based browsers support DOM/ContentLoaded
+		// Standards-based browsers support DOMContentLoaded
 		} else if ( document.addEventListener ) {
 
 			// Use the handy event callback
-			document.addEventListener( "DOM/ContentLoaded", completed );
+			document.addEventListener( "DOMContentLoaded", completed );
 
 			// A fallback to window.onload, that will always work
 			window.addEventListener( "load", completed );
@@ -3666,7 +3666,7 @@ jQuery.ready.promise = function( obj ) {
 						try {
 
 							// Use the trick by Diego Perini
-							// http://javascript.nwbox.com/IE/ContentLoaded/
+							// http://javascript.nwbox.com/IEContentLoaded/
 							top.doScroll( "left" );
 						} catch ( e ) {
 							return window.setTimeout( doScrollCheck, 50 );
@@ -4280,8 +4280,8 @@ jQuery.fn.extend( {
 
 				// Support: Firefox<29, Android 2.3
 				// Vendor-prefix box-sizing
-				"-webkit-box-sizing:/Content-box;-moz-box-sizing:/Content-box;" +
-				"box-sizing:/Content-box;display:block;margin:0;border:0;" +
+				"-webkit-box-sizing:content-box;-moz-box-sizing:content-box;" +
+				"box-sizing:content-box;display:block;margin:0;border:0;" +
 				"padding:1px;width:1px;zoom:1";
 			div.appendChild( document.createElement( "div" ) ).style.width = "5px";
 			shrinkWrapBlocksVal = div.offsetWidth !== 3;
@@ -4630,7 +4630,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 
 				tmp.innerHTML = wrap[ 1 ] + jQuery.htmlPrefilter( elem ) + wrap[ 2 ];
 
-				// Descend through wrappers to the right /Content
+				// Descend through wrappers to the right content
 				j = wrap[ 0 ];
 				while ( j-- ) {
 					tmp = tmp.lastChild;
@@ -4666,7 +4666,7 @@ function buildFragment( elems, context, scripts, selection, ignored ) {
 				jQuery.merge( nodes, tmp.childNodes );
 
 				// Fix #12392 for WebKit and IE > 9
-				tmp.text/Content = "";
+				tmp.textContent = "";
 
 				// Fix #12392 for oldIE
 				while ( tmp.firstChild ) {
@@ -5887,9 +5887,9 @@ var rinlinejQuery = / jQuery\d+="(?:null|\d+)"/g,
 
 // Support: IE<8
 // Manipulating tables requires a tbody
-function manipulationTarget( elem, /Content ) {
+function manipulationTarget( elem, content ) {
 	return jQuery.nodeName( elem, "table" ) &&
-		jQuery.nodeName( /Content.nodeType !== 11 ? /Content : /Content.firstChild, "tr" ) ?
+		jQuery.nodeName( content.nodeType !== 11 ? content : content.firstChild, "tr" ) ?
 
 		elem.getElementsByTagName( "tbody" )[ 0 ] ||
 			elem.appendChild( elem.ownerDocument.createElement( "tbody" ) ) :
@@ -5960,7 +5960,7 @@ function fixCloneNodeIssues( src, dest ) {
 		dest.removeAttribute( jQuery.expando );
 	}
 
-	// IE blanks /Contents when cloning scripts, and tries to evaluate newly-set text
+	// IE blanks contents when cloning scripts, and tries to evaluate newly-set text
 	if ( nodeName === "script" && dest.text !== src.text ) {
 		disableScript( dest ).text = src.text;
 		restoreScript( dest );
@@ -6040,7 +6040,7 @@ function domManip( collection, args, callback, ignored ) {
 			fragment = first;
 		}
 
-		// Require either new /Content or an interest in ignored elements to invoke the callback
+		// Require either new content or an interest in ignored elements to invoke the callback
 		if ( first || ignored ) {
 			scripts = jQuery.map( getAll( fragment, "script" ), disableScript );
 			hasScripts = scripts.length;
@@ -6087,7 +6087,7 @@ function domManip( collection, args, callback, ignored ) {
 							}
 						} else {
 							jQuery.globalEval(
-								( node.text || node.text/Content || node.innerHTML || "" )
+								( node.text || node.textContent || node.innerHTML || "" )
 									.replace( rcleanScript, "" )
 							);
 						}
@@ -6380,7 +6380,7 @@ jQuery.fn.extend( {
 	replaceWith: function() {
 		var ignored = [];
 
-		// Make the changes, replacing each non-ignored context element with the new /Content
+		// Make the changes, replacing each non-ignored context element with the new content
 		return domManip( this, arguments, function( elem ) {
 			var parent = this.parentNode;
 
@@ -6470,7 +6470,7 @@ function defaultDisplay( nodeName ) {
 				.appendTo( doc.documentElement );
 
 			// Always write a new HTML skeleton so Webkit and Firefox don't choke on reuse
-			doc = ( iframe[ 0 ]./ContentWindow || iframe[ 0 ]./ContentDocument ).document;
+			doc = ( iframe[ 0 ].contentWindow || iframe[ 0 ].contentDocument ).document;
 
 			// Support: IE
 			doc.write();
@@ -6536,9 +6536,9 @@ var documentElement = document.documentElement;
 	// (IE uses styleFloat instead of cssFloat)
 	support.cssFloat = !!div.style.cssFloat;
 
-	div.style.backgroundClip = "/Content-box";
+	div.style.backgroundClip = "content-box";
 	div.cloneNode( true ).style.backgroundClip = "";
-	support.clearCloneStyle = div.style.backgroundClip === "/Content-box";
+	support.clearCloneStyle = div.style.backgroundClip === "content-box";
 
 	container = document.createElement( "div" );
 	container.style.cssText = "border:0;width:8px;height:0;top:0;left:-9999px;" +
@@ -6605,7 +6605,7 @@ var documentElement = document.documentElement;
 	} );
 
 	function computeStyleTests() {
-		var /Contents, divStyle,
+		var contents, divStyle,
 			documentElement = document.documentElement;
 
 		// Setup
@@ -6641,22 +6641,22 @@ var documentElement = document.documentElement;
 			// Div with explicit width and no margin-right incorrectly
 			// gets computed margin-right based on width of container (#3333)
 			// WebKit Bug 13343 - getComputedStyle returns wrong value for margin-right
-			/Contents = div.appendChild( document.createElement( "div" ) );
+			contents = div.appendChild( document.createElement( "div" ) );
 
 			// Reset CSS: box-sizing; display; margin; border; padding
-			/Contents.style.cssText = div.style.cssText =
+			contents.style.cssText = div.style.cssText =
 
 				// Support: Android 2.3
 				// Vendor-prefix box-sizing
-				"-webkit-box-sizing:/Content-box;-moz-box-sizing:/Content-box;" +
-				"box-sizing:/Content-box;display:block;margin:0;border:0;padding:0";
-			/Contents.style.marginRight = /Contents.style.width = "0";
+				"-webkit-box-sizing:content-box;-moz-box-sizing:content-box;" +
+				"box-sizing:content-box;display:block;margin:0;border:0;padding:0";
+			contents.style.marginRight = contents.style.width = "0";
 			div.style.width = "1px";
 
 			reliableMarginRightVal =
-				!parseFloat( ( window.getComputedStyle( /Contents ) || {} ).marginRight );
+				!parseFloat( ( window.getComputedStyle( contents ) || {} ).marginRight );
 
-			div.removeChild( /Contents );
+			div.removeChild( contents );
 		}
 
 		// Support: IE6-8
@@ -6673,13 +6673,13 @@ var documentElement = document.documentElement;
 			div.style.display = "";
 			div.innerHTML = "<table><tr><td></td><td>t</td></tr></table>";
 			div.childNodes[ 0 ].style.borderCollapse = "separate";
-			/Contents = div.getElementsByTagName( "td" );
-			/Contents[ 0 ].style.cssText = "margin:0;border:0;padding:0;display:none";
-			reliableHiddenOffsetsVal = /Contents[ 0 ].offsetHeight === 0;
+			contents = div.getElementsByTagName( "td" );
+			contents[ 0 ].style.cssText = "margin:0;border:0;padding:0;display:none";
+			reliableHiddenOffsetsVal = contents[ 0 ].offsetHeight === 0;
 			if ( reliableHiddenOffsetsVal ) {
-				/Contents[ 0 ].style.display = "";
-				/Contents[ 1 ].style.display = "none";
-				reliableHiddenOffsetsVal = /Contents[ 0 ].offsetHeight === 0;
+				contents[ 0 ].style.display = "";
+				contents[ 1 ].style.display = "none";
+				reliableHiddenOffsetsVal = contents[ 0 ].offsetHeight === 0;
 			}
 		}
 
@@ -6945,7 +6945,7 @@ function setPositiveNumber( elem, value, subtract ) {
 }
 
 function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
-	var i = extra === ( isBorderBox ? "border" : "/Content" ) ?
+	var i = extra === ( isBorderBox ? "border" : "content" ) ?
 
 		// If we already have the right measurement, avoid augmentation
 		4 :
@@ -6964,8 +6964,8 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 
 		if ( isBorderBox ) {
 
-			// border-box includes padding, so remove it if we want /Content
-			if ( extra === "/Content" ) {
+			// border-box includes padding, so remove it if we want content
+			if ( extra === "content" ) {
 				val -= jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
 			}
 
@@ -6975,10 +6975,10 @@ function augmentWidthOrHeight( elem, name, extra, isBorderBox, styles ) {
 			}
 		} else {
 
-			// at this point, extra isn't /Content, so add padding
+			// at this point, extra isn't content, so add padding
 			val += jQuery.css( elem, "padding" + cssExpand[ i ], true, styles );
 
-			// at this point, extra isn't /Content nor padding, so add border
+			// at this point, extra isn't content nor padding, so add border
 			if ( extra !== "padding" ) {
 				val += jQuery.css( elem, "border" + cssExpand[ i ] + "Width", true, styles );
 			}
@@ -7027,7 +7027,7 @@ function getWidthOrHeight( elem, name, extra ) {
 		augmentWidthOrHeight(
 			elem,
 			name,
-			extra || ( isBorderBox ? "border" : "/Content" ),
+			extra || ( isBorderBox ? "border" : "content" ),
 			valueIsBorderBox,
 			styles
 		)
@@ -8607,9 +8607,9 @@ if ( !getSetAttribute ) {
 		set: nodeHook.set
 	};
 
-	// Set /Contenteditable to false on removals(#10429)
+	// Set contenteditable to false on removals(#10429)
 	// Setting to empty string throws an error as an invalid value
-	jQuery.attrHooks./Contenteditable = {
+	jQuery.attrHooks.contenteditable = {
 		set: function( elem, value, name ) {
 			nodeHook.set( elem, value === "" ? false : value, name );
 		}
@@ -8785,7 +8785,7 @@ jQuery.each( [
 	"colSpan",
 	"useMap",
 	"frameBorder",
-	"/ContentEditable"
+	"contentEditable"
 ], function() {
 	jQuery.propFix[ this.toLowerCase() ] = this;
 } );
@@ -9080,7 +9080,7 @@ var
 
 	// #7653, #8125, #8152: local protocol detection
 	rlocalProtocol = /^(?:about|app|app-storage|.+-extension|file|res|widget):$/,
-	rno/Content = /^(?:GET|HEAD)$/,
+	rnoContent = /^(?:GET|HEAD)$/,
 	rprotocol = /^\/\//,
 	rurl = /^([\w.+-]+:)(?:\/\/(?:[^\/?#]*@|)([^\/?#:]*)(?::(\d+)|)|)/,
 
@@ -9192,26 +9192,26 @@ function ajaxExtend( target, src ) {
 }
 
 /* Handles responses to an ajax request:
- * - finds the right dataType (mediates between /Content-type and expected dataType)
+ * - finds the right dataType (mediates between content-type and expected dataType)
  * - returns the corresponding response
  */
 function ajaxHandleResponses( s, jqXHR, responses ) {
 	var firstDataType, ct, finalDataType, type,
-		/Contents = s./Contents,
+		contents = s.contents,
 		dataTypes = s.dataTypes;
 
-	// Remove auto dataType and get /Content-type in the process
+	// Remove auto dataType and get content-type in the process
 	while ( dataTypes[ 0 ] === "*" ) {
 		dataTypes.shift();
 		if ( ct === undefined ) {
-			ct = s.mimeType || jqXHR.getResponseHeader( "/Content-Type" );
+			ct = s.mimeType || jqXHR.getResponseHeader( "Content-Type" );
 		}
 	}
 
-	// Check if we're dealing with a known /Content-type
+	// Check if we're dealing with a known content-type
 	if ( ct ) {
-		for ( type in /Contents ) {
-			if ( /Contents[ type ] && /Contents[ type ].test( ct ) ) {
+		for ( type in contents ) {
+			if ( contents[ type ] && contents[ type ].test( ct ) ) {
 				dataTypes.unshift( type );
 				break;
 			}
@@ -9364,7 +9364,7 @@ jQuery.extend( {
 		global: true,
 		processData: true,
 		async: true,
-		/ContentType: "application/x-www-form-urlencoded; charset=UTF-8",
+		contentType: "application/x-www-form-urlencoded; charset=UTF-8",
 		/*
 		timeout: 0,
 		data: null,
@@ -9385,7 +9385,7 @@ jQuery.extend( {
 			json: "application/json, text/javascript"
 		},
 
-		/Contents: {
+		contents: {
 			xml: /\bxml\b/,
 			html: /\bhtml/,
 			json: /\bjson\b/
@@ -9540,7 +9540,7 @@ jQuery.extend( {
 					return this;
 				},
 
-				// Overrides response /Content-type header
+				// Overrides response content-type header
 				overrideMimeType: function( type ) {
 					if ( !state ) {
 						s.mimeType = type;
@@ -9632,15 +9632,15 @@ jQuery.extend( {
 		// Uppercase the type
 		s.type = s.type.toUpperCase();
 
-		// Determine if request has /Content
-		s.has/Content = !rno/Content.test( s.type );
+		// Determine if request has content
+		s.hasContent = !rnoContent.test( s.type );
 
 		// Save the URL in case we're toying with the If-Modified-Since
 		// and/or If-None-Match header later on
 		cacheURL = s.url;
 
-		// More options handling for requests with no /Content
-		if ( !s.has/Content ) {
+		// More options handling for requests with no content
+		if ( !s.hasContent ) {
 
 			// If data is available, append data to url
 			if ( s.data ) {
@@ -9673,8 +9673,8 @@ jQuery.extend( {
 		}
 
 		// Set the correct header, if data is being sent
-		if ( s.data && s.has/Content && s./ContentType !== false || options./ContentType ) {
-			jqXHR.setRequestHeader( "/Content-Type", s./ContentType );
+		if ( s.data && s.hasContent && s.contentType !== false || options.contentType ) {
+			jqXHR.setRequestHeader( "Content-Type", s.contentType );
 		}
 
 		// Set the Accepts header for the server, depending on the dataType
@@ -9803,9 +9803,9 @@ jQuery.extend( {
 					}
 				}
 
-				// if no /Content
+				// if no content
 				if ( status === 204 || s.type === "HEAD" ) {
-					statusText = "no/Content";
+					statusText = "nocontent";
 
 				// if not modified
 				} else if ( status === 304 ) {
@@ -9953,10 +9953,10 @@ jQuery.fn.extend( {
 
 		return this.each( function() {
 			var self = jQuery( this ),
-				/Contents = self./Contents();
+				contents = self.contents();
 
-			if ( /Contents.length ) {
-				/Contents.wrapAll( html );
+			if ( contents.length ) {
+				contents.wrapAll( html );
 
 			} else {
 				self.append( html );
@@ -10251,7 +10251,7 @@ if ( xhrSupported ) {
 					// Do send the request
 					// This may raise an exception which is actually
 					// handled in jQuery.ajax (so no try/catch here)
-					xhr.send( ( options.has/Content && options.data ) || null );
+					xhr.send( ( options.hasContent && options.data ) || null );
 
 					// Listener
 					callback = function( _, isAbort ) {
@@ -10364,7 +10364,7 @@ jQuery.ajaxSetup( {
 		script: "text/javascript, application/javascript, " +
 			"application/ecmascript, application/x-ecmascript"
 	},
-	/Contents: {
+	contents: {
 		script: /\b(?:java|ecma)script\b/
 	},
 	converters: {
@@ -10469,7 +10469,7 @@ jQuery.ajaxPrefilter( "json jsonp", function( s, originalSettings, jqXHR ) {
 		jsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?
 			"url" :
 			typeof s.data === "string" &&
-				( s./ContentType || "" )
+				( s.contentType || "" )
 					.indexOf( "application/x-www-form-urlencoded" ) === 0 &&
 				rjsonp.test( s.data ) && "data"
 		);
@@ -10878,7 +10878,7 @@ jQuery.each( [ "top", "left" ], function( i, prop ) {
 
 // Create innerHeight, innerWidth, height, width, outerHeight and outerWidth methods
 jQuery.each( { Height: "height", Width: "width" }, function( name, type ) {
-	jQuery.each( { padding: "inner" + name, /Content: type, "": "outer" + name },
+	jQuery.each( { padding: "inner" + name, content: type, "": "outer" + name },
 	function( defaultExtra, funcName ) {
 
 		// margin is only for outerHeight, outerWidth

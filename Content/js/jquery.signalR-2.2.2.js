@@ -156,7 +156,7 @@
     };
 
     signalR._ = {
-        default/ContentType: "application/x-www-form-urlencoded; charset=UTF-8",
+        defaultContentType: "application/x-www-form-urlencoded; charset=UTF-8",
 
         ieVersion: (function () {
             var version,
@@ -402,7 +402,7 @@
 
         ajaxDataType: "text",
 
-        /ContentType: "application/json; charset=UTF-8",
+        contentType: "application/json; charset=UTF-8",
 
         logging: false,
 
@@ -542,7 +542,7 @@
                     }
                 }
 
-                connection./ContentType = signalR._.default/ContentType;
+                connection.contentType = signalR._.defaultContentType;
             }
 
             connection.withCredentials = config.withCredentials;
@@ -1168,7 +1168,7 @@
                     type: "GET",
                     data: {},
                     xhrFields: { withCredentials: connection.withCredentials },
-                    /ContentType: connection./ContentType,
+                    contentType: connection.contentType,
                     dataType: connection.ajaxDataType
                 }, options));
         },
@@ -1374,7 +1374,7 @@
             xhr = transportLogic.ajax(connection, {
                 url: url,
                 type: connection.ajaxDataType === "jsonp" ? "GET" : "POST",
-                /ContentType: signalR._.default/ContentType,
+                contentType: signalR._.defaultContentType,
                 data: {
                     data: payload
                 },
@@ -2195,7 +2195,7 @@
                 connection.frameMessageCount = (connection.frameMessageCount || 0) + 1;
                 if (connection.frameMessageCount > signalR.transports.foreverFrame.iframeClearThreshold) {
                     connection.frameMessageCount = 0;
-                    cw = connection.frame./ContentWindow || connection.frame./ContentDocument;
+                    cw = connection.frame.contentWindow || connection.frame.contentDocument;
                     if (cw && cw.document && cw.document.body) {
                         body = cw.document.body;
 
@@ -2219,7 +2219,7 @@
                     connection.frame.stop();
                 } else {
                     try {
-                        cw = connection.frame./ContentWindow || connection.frame./ContentDocument;
+                        cw = connection.frame.contentWindow || connection.frame.contentDocument;
                         if (cw.document && cw.document.execCommand) {
                             cw.document.execCommand("Stop");
                         }
@@ -2369,7 +2369,7 @@
                         },
                         url: url,
                         type: "POST",
-                        /ContentType: signalR._.default/ContentType,
+                        contentType: signalR._.defaultContentType,
                         data: postData,
                         timeout: connection._.pollTimeout,
                         success: function (result) {

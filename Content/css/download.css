@@ -35,7 +35,7 @@ header {
     -ms-flex-align: center;
     align-items: center;
     color: white;
-    justify-/Content: space-around;
+    justify-content: space-around;
 }
 
 .dropdown-menu {
@@ -78,7 +78,7 @@ body {
             flex-direction: row;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-/Content: center;
+            justify-content: center;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
 }
@@ -225,7 +225,7 @@ textarea {
             align-items: center;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-/Content: center;
+            justify-content: center;
 }
 
 .error {
@@ -297,7 +297,7 @@ label {
     width: 100%;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
-            justify-/Content: flex-start;
+            justify-content: flex-start;
 }
 
     .pads h3 {
@@ -320,7 +320,7 @@ label {
     margin: 0 auto;
 }
 
-.modal-/Content {
+.modal-content {
     text-align: center;
 }
 
@@ -445,9 +445,9 @@ label {
     margin-top: 5%;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
-            justify-/Content: center;
+            justify-content: center;
 	margin-top: 5%;
-	justify-/Content: center;
+	justify-content: center;
 }
 
 .input-login{
@@ -506,7 +506,7 @@ label {
     .title-b {
         width: 100%;
         -ms-flex-pack: distribute;
-            justify-/Content: space-around;
+            justify-content: space-around;
         margin-bottom: 4%;
     }
 

@@ -1,6 +1,6 @@
 function mudarStatus(status) {
     $.ajax({
-        /ContentType: 'application/json;',
+        contentType: 'application/json;',
         type: "POST",
         url: "/Quest/MudarStatus",
         data: JSON.stringify({

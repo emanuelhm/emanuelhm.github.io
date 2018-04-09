@@ -13275,9 +13275,9 @@ module.exports = function(Chart) {
 			var opacity = Math.abs(vm.opacity < 1e-3) ? 0 : vm.opacity;
 
 			// Truthy/falsey value for empty tooltip
-			var hasTooltip/Content = vm.title.length || vm.beforeBody.length || vm.body.length || vm.afterBody.length || vm.footer.length;
+			var hasTooltipContent = vm.title.length || vm.beforeBody.length || vm.body.length || vm.afterBody.length || vm.footer.length;
 
-			if (this._options.enabled && hasTooltip/Content) {
+			if (this._options.enabled && hasTooltipContent) {
 				// Draw Background
 				this.drawBackground(pt, vm, ctx, tooltipSize, opacity);
 
@@ -14295,7 +14295,7 @@ var helpers = {
 	},
 
 	/**
-	 * Returns true if the `a0` and `a1` arrays have the same /Content, else returns false.
+	 * Returns true if the `a0` and `a1` arrays have the same content, else returns false.
 	 * @see http://stackoverflow.com/a/14853974
 	 * @param {Array} a0 - The array to compare
 	 * @param {Array} a1 - The array to compare
@@ -15312,7 +15312,7 @@ var implementation = dom._enabled ? dom : basic;
 
 /**
  * @namespace Chart.platform
- * @see https://chartjs.gitbooks.io/proposals/Content/Platform.html
+ * @see https://chartjs.gitbooks.io/proposals/content/Platform.html
  * @since 2.4.0
  */
 module.exports = helpers.extend({
@@ -17342,7 +17342,7 @@ module.exports = function(Chart) {
 		 * Right, this is really confusing and there is a lot of maths going on here
 		 * The gist of the problem is here: https://gist.github.com/nnnick/696cc9c55f4b0beb8fe9
 		 *
-		 * Reaction: https://dl.dropboxuser/Content.com/u/34601363/toomuchscience.gif
+		 * Reaction: https://dl.dropboxusercontent.com/u/34601363/toomuchscience.gif
 		 *
 		 * Solution:
 		 *
@@ -17363,7 +17363,7 @@ module.exports = function(Chart) {
 		 * This will mean we have a shape fitted to the canvas, as large as it can be with the labels
 		 * and position it in the most space efficient manner
 		 *
-		 * https://dl.dropboxuser/Content.com/u/34601363/yeahscience.gif
+		 * https://dl.dropboxusercontent.com/u/34601363/yeahscience.gif
 		 */
 
 		var plFont = getPointLabelFontOptions(scale);
