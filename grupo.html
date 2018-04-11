@@ -22,25 +22,25 @@
     <header class="mudarCor" style="background-color: rgb(16, 100, 148);">
         <div>
             <p class="txtlogo logo-hidden icon-white">
-                <a href="/index.html" title="Início">
+                <a href="/inicio.html" title="InÃ­cio">
                     <span id="txt-task">Task</span><span id="txt-quest">Quest</span>
                 </a>
             </p>
         </div>
         <div class="elements">
-            <div class="icon-container mobile-hidden"><li class="li-hidden icon-white" title="Grupos"><a href="/Home/Grupos"><i class="fa fa-group" aria-hidden="true"></i></a></li></div>
-            <div class="icon-container mobile-hidden"><li class="li-hidden icon-white" title="Pendências"><a href="/Home/Quests"><i class="fa fa-check" aria-hidden="true"></i></a></li></div>
+            <div class="icon-container mobile-hidden"><li class="li-hidden icon-white" title="Grupos"><a><i class="fa fa-group" aria-hidden="true"></i></a></li></div>
+            <div class="icon-container mobile-hidden"><li class="li-hidden icon-white" title="PendÃªncias"><a><i class="fa fa-check" aria-hidden="true"></i></a></li></div>
             <div class="icon-container icon-white">
                 <li class="dropdown li-hidden" title="Menu">
                     <a class="header-a dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-bars" aria-hidden="true"></i>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a href="/CriarQuest.html">Criar Quest</a></li>
+                        <li><a>Criar Quest</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="/Configuracao">Visualizar Perfil</a></li>
+                        <li><a>Visualizar Perfil</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="/Account/SignOutEverywhere">Sair</a></li>
+                        <li><a>Sair</a></li>
                     </ul>
                 </li>
             </div>
@@ -78,9 +78,9 @@
             <div class="grupo-elipse corGrupo" style="background-color: rgb(16, 100, 148);"><img src="/Content/img/groupicon.png"></div>
         </div>
 
-        <div class="limit-lines limit-lines_grupo" title="@Model.Nome">
-            <h3 class="nomeGrupo">@Model.Nome</h3>
-            <span class="grupo-descricao descricaoGrupo">@Model.Descricao</span>
+        <div class="limit-lines limit-lines_grupo">
+            <h3 class="nomeGrupo"></h3>
+            <span class="grupo-descricao descricaoGrupo"></span>
         </div>
         <div><h3>1 Integrante</h3></div>
         <div class="icon-black"><a><i class="fa fa-plus" title="Adicionar Integrante" aria-hidden="true" data-target="#modalAdicionarIntegrante" data-toggle="modal"></i></a></div>
@@ -133,14 +133,14 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h1 class="modal-title" id="exampleModalLabel">Você tem certeza?</h1>
+                    <h1 class="modal-title" id="exampleModalLabel">VocÃª tem certeza?</h1>
                 </div>
                 <form method="post" id="formConfirmacao">
                     <div class="modal-footer modalfooter-container">
                         <input type="hidden" name="Email" />
                         <input type="hidden" name="GrupoId" value="@Model.Id" />
                         <input type="submit" class="btn btn-secondary btn-cg" value="Sim">
-                        <input type="submit" data-dismiss="modal" class="btn btn-secondary btn-cg" value="Não">
+                        <input type="submit" data-dismiss="modal" class="btn btn-secondary btn-cg" value="NÃ£o">
                     </div>
                 </form>
             </div>
@@ -150,7 +150,7 @@
     <div class="modal fade" id="modalEditarGrupo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
-                <form id="formCriarGrupo" action="/Grupo/EditarGrupo" method="post">
+                <form id="formCriarGrupo" method="post">
                     <input type="hidden" value="@Model.Id" name="Id" />
                     <div class="modal-header">
                         <h1 class="modal-title" id="exampleModalLabel">Editar Grupo</h1>
@@ -160,16 +160,16 @@
                     </div>
                     <div class="modal-body">
                         <div class="form-group">
-                            <input type="text" required class="form-control" id="Nome" name="Nome" placeholder="Nome do Grupo" value="@Model.Nome">
+                            <input type="text" required class="form-control" id="Nome" name="Nome" placeholder="Nome do Grupo">
                             <label for="Nome"></label>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" required id="Descricao" name="Descricao" placeholder="Descrição do Grupo">@Model.Descricao</textarea>
+                            <textarea class="form-control" required id="Descricao" name="Descricao" placeholder="DescriÃ§Ã£o do Grupo"></textarea>
                             <label for="Descricao"></label>
                         </div>
                         <div class="form-group">
                             <p>Escolha a cor do Grupo</p>
-                            <input type="hidden" id="Cor" name="Cor" value="@Model.Cor">
+                            <input type="hidden" id="Cor" name="Cor">
                         </div>
                     </div>
                     <div class="modal-footer">
